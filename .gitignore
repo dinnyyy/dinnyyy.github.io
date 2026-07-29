@@ -1,0 +1,17 @@
+# Working material — not published to the site
+/Sources/
+
+# Graphify knowledge-graph output (regenerated locally)
+/graphify-out/
+.graphify/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Python (graphify venv)
+.venv/
+__pycache__/
