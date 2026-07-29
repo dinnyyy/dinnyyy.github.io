@@ -1,0 +1,89 @@
+================================================================================
+PROJECT SCOPE & BLUEPRINT: DISTRIBUTED VECTOR DATABASE
+================================================================================
+
+OVERVIEW
+A high-performance, distributed vector database built from scratch in C++. 
+Designed to index, search, and store high-dimensional embeddings for AI 
+applications. 
+
+TARGET OUTCOMES
+- High-Frequency Trading (Optiver): Showcases raw memory management, 
+  hardware-level optimization, and custom data structures.
+- Cloud/Infrastructure (Firmus): Demonstrates applied Kubernetes, Docker, 
+  and stateful distributed system orchestration.
+- Top-Tier Placements (CSIRO, Generation STEM Links): Proves extreme technical 
+  rigor, bridging the gap between AI and low-level backend systems.
+
+CORE TECH STACK
+- Language: C++ (C++20 standard)
+- Math/Optimization: AVX2 SIMD Intrinsics (CPU-bound, no GPU required)
+- Networking/RPC: gRPC, Protocol Buffers
+- Distributed Consensus: Raft Protocol
+- Infrastructure: Docker, Kubernetes (Minikube/Kind), Native Linux environment
+- Frontend/Visualization: React.js (Custom built, strictly avoiding deprecated 
+  graphing libraries like Feder)
+
+================================================================================
+PHASE 1: THE ENGINE ROOM (Single-Node Core) - Months 1 to 2
+================================================================================
+Transitioning from managed languages (Java) to manual, bare-metal memory management.
+
+Deliverables:
+- Native Linux build system setup using CMake.
+- Custom memory allocators to ensure contiguous storage and minimize CPU 
+  cache misses.
+- Mathematical distance functions (Euclidean, Cosine Similarity).
+- Hierarchical Navigable Small World (HNSW) graph implementation.
+- Comprehensive unit testing for memory leaks and graph integrity.
+
+================================================================================
+PHASE 2: THE NETWORK (Concurrency & API) - Month 3
+================================================================================
+Transforming a local process into a multi-threaded, network-accessible service.
+
+Deliverables:
+- Integration of gRPC and Protocol Buffers for the API layer (Insert, Search).
+- Thread pool implementation to handle concurrent search queries.
+- Granular Read-Write locks and atomic operations (lock-free programming).
+- Local multi-port testing (simulating multiple nodes on a single machine).
+
+================================================================================
+PHASE 3: THE DISTRIBUTED BRAIN (Consensus & Sharding) - Month 4
+================================================================================
+Linking multiple nodes together into a fault-tolerant cluster.
+
+Deliverables:
+- Implementation of the Raft consensus protocol (Leader Election, Heartbeats, 
+  Log Replication).
+- Consistent hashing ring for data sharding across multiple nodes.
+- Automated failure testing (scripting a node shutdown and verifying seamless 
+  recovery and leader reassignment without data corruption).
+
+================================================================================
+PHASE 4: INFRASTRUCTURE & VISUALIZATION - Months 5 to 6
+================================================================================
+Deploying the system to the cloud and achieving hardware-level optimization.
+
+Deliverables:
+- SIMD Optimizations: Translating low-level architectural understanding 
+  (similar to MIPS assembly) into AVX2 hardware instructions for rapid, 
+  parallel vector math.
+- Containerization: Dockerfiles for the database nodes.
+- Orchestration: Kubernetes manifests (StatefulSets, Headless Services) running 
+  on a local cluster.
+- The "Chaos" Demo UI: A lightweight React dashboard to visualize node health, 
+  live query latency, and demonstrate system resilience during intentional 
+  node failures.
+
+================================================================================
+RESUME INTEGRATION (Draft Bullet Points)
+================================================================================
+- Engineered a distributed, low-latency vector database from scratch in C++ to 
+  index and search high-dimensional AI embeddings.
+- Implemented the Raft consensus protocol and consistent hashing to ensure data 
+  sharding and fault tolerance across containerized nodes.
+- Optimized geometric distance calculations using AVX2 SIMD hardware intrinsics, 
+  maximizing CPU throughput and minimizing query latency.
+- Orchestrated the distributed architecture using Docker and Kubernetes 
+  StatefulSets to simulate resilient real-world cloud deployments.
