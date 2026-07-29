@@ -495,7 +495,7 @@ p {
 }
 .stat-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin-top: 4px;
 }
@@ -526,7 +526,7 @@ p {
 /* ---------- Skills ---------- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-top: 40px;
 }
@@ -937,6 +937,7 @@ p {
   .nav-links.open a.active::after { display: none; }
 
   .project-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
   .build { flex-wrap: wrap; }
   .build .b-links { width: 100%; }
   .footer-inner { flex-direction: column-reverse; align-items: flex-start; }
