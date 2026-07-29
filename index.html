@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua Dinn — Software &amp; Systems Engineer</title>
+  <meta name="description" content="Joshua Dinn — software engineering and econometrics student at Monash, building low-level systems, machine-learning pipelines, and quantitative tools. Projects, experience, and certifications." />
+  <meta name="author" content="Joshua Dinn" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Joshua Dinn — Software &amp; Systems Engineer" />
+  <meta property="og:description" content="Low-level systems, machine learning, and quantitative engineering. Projects, experience, and certifications." />
+  <meta property="og:url" content="https://dinnyyy.github.io/" />
+  <meta property="og:image" content="https://dinnyyy.github.io/assets/img/vector-db.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Set theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) {
+          t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Joshua Dinn — home">
+        <span class="monogram">JD</span>
+        <span class="brand-name">Joshua Dinn<small>Software &amp; Systems</small></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="icon-btn nav-desktop-only" href="https://github.com/dinnyyy" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+        </a>
+        <a class="icon-btn nav-desktop-only" href="https://www.linkedin.com/in/josh-dinn/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33 0-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.73v20.53C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.73C24 .78 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to light theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 1 0 9.8 9.8Z"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== Hero ===================== -->
+    <section class="hero wrap">
+      <span class="hero-status"><span class="dot"></span> Open to 2027 internships · Melbourne, Australia</span>
+      <h1>Joshua <span class="accent">Dinn</span></h1>
+      <p class="role">Software &amp; Systems Engineer <span class="sep">/</span> Quant &amp; ML</p>
+      <p class="hero-lead">
+        Software Engineering &amp; Econometrics student at Monash University. I build from
+        the metal up — low-level C++ systems, distributed infrastructure, machine-learning
+        pipelines, and quantitative finance tools — and I like the problems that sit right
+        where AI meets the hardware underneath it.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">
+          View projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        <a class="btn btn-ghost" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Résumé
+        </a>
+      </div>
+
+      <div class="affiliations">
+        <p class="label">Affiliations</p>
+        <ul>
+          <li>Monash University</li>
+          <li>Monash DeepNeuron</li>
+          <li>Collingwood Football Club</li>
+          <li>NVIDIA Certified</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <p class="eyebrow reveal">About</p>
+        <h2 class="section-title reveal">Where AI meets the hardware underneath</h2>
+
+        <div class="about-grid">
+          <div class="about-body reveal">
+            <p>
+              I'm a dual-degree student at Monash University reading
+              <strong>Software Engineering</strong> and <strong>Econometrics</strong>,
+              which is a fancy way of saying I spend my time between two worlds: the
+              low-level systems that make software fast, and the statistical models that
+              make data mean something.
+            </p>
+            <p>
+              At <strong>Monash DeepNeuron</strong> I build on-device AI memory systems and
+              teach C++, CUDA, and high-performance computing alongside NVIDIA and the
+              Pawsey Supercomputing Centre. On the quantitative side I've built trading
+              systems, volatility models, and churn-prediction pipelines — most recently as
+              a <strong>Data &amp; Analytics intern at the Collingwood Football Club</strong>.
+            </p>
+            <p>
+              My current focus is a <strong>distributed vector database written from
+              scratch in C++</strong>: HNSW indexing, AVX2 SIMD math, Raft consensus, and
+              Kubernetes orchestration — the kind of project that forces you to understand
+              every layer of the stack.
+            </p>
+
+            <div class="skills-grid">
+              <div class="skill-card reveal">
+                <h4>Languages</h4>
+                <ul class="tags">
+                  <li class="tag">C++</li><li class="tag">Python</li><li class="tag">TypeScript</li>
+                  <li class="tag">JavaScript</li><li class="tag">Java</li><li class="tag">SQL</li><li class="tag">MATLAB</li>
+                </ul>
+              </div>
+              <div class="skill-card reveal">
+                <h4>Systems &amp; Infra</h4>
+                <ul class="tags">
+                  <li class="tag">Linux</li><li class="tag">Docker</li><li class="tag">Kubernetes</li>
+                  <li class="tag">gRPC</li><li class="tag">CUDA</li><li class="tag">AWS</li><li class="tag">Git</li>
+                </ul>
+              </div>
+              <div class="skill-card reveal">
+                <h4>Data &amp; Quant</h4>
+                <ul class="tags">
+                  <li class="tag">pandas</li><li class="tag">NumPy</li><li class="tag">XGBoost</li>
+                  <li class="tag">Snowflake</li><li class="tag">OxMetrics</li><li class="tag">React</li><li class="tag">Node.js</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside class="about-card reveal">
+            <h3>Monash University</h3>
+            <p class="edu-meta">Melbourne · Mar 2023 – Oct 2027</p>
+            <p style="color:var(--text-muted);font-size:0.96rem;margin-bottom:18px;">
+              B. Engineering (Software Engineering) &amp; B. Commerce (Econometrics)
+            </p>
+            <div class="stat-row">
+              <div class="stat"><div class="num">79.97</div><div class="cap">WAM · Distinction</div></div>
+              <div class="stat"><div class="num">3.48</div><div class="cap">GPA / 4.0</div></div>
+              <div class="stat"><div class="num">100%</div><div class="cap">Software Testing</div></div>
+            </div>
+            <div class="project-links" style="margin-top:20px;">
+              <a class="link-pill" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+                Résumé · Software
+              </a>
+              <a class="link-pill" href="assets/resume/Joshua_Dinn_Analyst.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+                Résumé · Analyst
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Experience ===================== -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <p class="eyebrow reveal">Experience</p>
+        <h2 class="section-title reveal">Roles &amp; teams</h2>
+        <p class="section-lead reveal">A mix of engineering, applied AI, and quantitative analytics — across research teams, industry, and teaching.</p>
+
+        <div class="timeline">
+          <article class="xp reveal">
+            <div class="xp-when">Sep 2025 – Present</div>
+            <div class="xp-main">
+              <div class="xp-org"><h3>Monash DeepNeuron</h3><span class="role">Optimised Computing Member</span></div>
+              <ul>
+                <li>Building an on-device AI memory system for AR glasses: a vector database with HNSW indexing and approximate nearest-neighbour search powering a low-latency retrieval-augmented generation (RAG) pipeline.</li>
+                <li>Teaching Assistant for an 8-week C++ and accelerated-computing workshop on GPU programming, CUDA, and HPC — run with NVIDIA, the Pawsey Supercomputing Centre, and NCI.</li>
+                <li>NVIDIA CUDA certified through the program.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="xp reveal">
+            <div class="xp-when">Jul 2026 – Present</div>
+            <div class="xp-main">
+              <div class="xp-org"><h3>Monash eSolutions</h3><span class="role">AI Fitness Trainer</span></div>
+              <ul>
+                <li>Run in-person sessions teaching students and staff how to use AI effectively, ethically, and in everyday study and work.</li>
+                <li>Helped deliver a university webinar on AI to an audience of 200+ attendees.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="xp reveal">
+            <div class="xp-when">Mar 2026 – Jun 2026</div>
+            <div class="xp-main">
+              <div class="xp-org"><h3>Collingwood Football Club</h3><span class="role">Data &amp; Analytics Intern</span></div>
+              <ul>
+                <li>Built a membership churn-prediction model in XGBoost, engineering feature pipelines from historical transaction and engagement data to flag at-risk members.</li>
+                <li>Created an interactive dashboard breaking down churn drivers with SHAP feature importance for commercial stakeholders.</li>
+                <li>Designed a repository-synchronisation workflow between the club's web and mobile codebases to streamline deployments.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="xp reveal">
+            <div class="xp-when">Jun 2024 – Dec 2025</div>
+            <div class="xp-main">
+              <div class="xp-org"><h3>Outlier AI</h3><span class="role">AI Trainer · Mathematics</span></div>
+              <ul>
+                <li>Reviewed and refined AI-generated mathematical solutions written in LaTeX for logical correctness and technical clarity.</li>
+                <li>Gave structured feedback on reasoning and formatting to improve model output quality across advanced problem sets.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="xp reveal">
+            <div class="xp-when">Feb 2023 – Present</div>
+            <div class="xp-main">
+              <div class="xp-org"><h3>TMJ Tutoring</h3><span class="role">Mathematics Tutor</span></div>
+              <ul>
+                <li>Tutor high-school students in mathematics, focusing on exam preparation and problem-solving.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Projects ===================== -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="projects-head">
+          <div>
+            <p class="eyebrow reveal">Projects</p>
+            <h2 class="section-title reveal">Selected work</h2>
+          </div>
+          <a class="btn btn-ghost btn-sm reveal" href="https://github.com/dinnyyy" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+            All repositories
+          </a>
+        </div>
+
+        <p class="group-label reveal">Currently building</p>
+
+        <!-- Distributed Vector Database -->
+        <article class="project reveal">
+          <div class="project-media">
+            <img src="assets/img/vector-db.svg" alt="Distributed vector database — connected nodes and a consistent-hashing ring" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-badges">
+              <span class="badge progress">In progress</span>
+              <span class="badge plain">Personal · flagship</span>
+            </div>
+            <h3>Distributed Vector Database</h3>
+            <p class="summary">
+              A high-performance, distributed vector database built from scratch in C++20 to
+              index and search high-dimensional AI embeddings. HNSW graph indexing, AVX2 SIMD
+              distance math, a gRPC API, Raft consensus, and consistent-hashing sharding across
+              containerised nodes — with a React dashboard to visualise node health and query
+              latency during induced failures.
+            </p>
+            <div class="project-stack">
+              <span class="tag">C++20</span><span class="tag">HNSW</span><span class="tag">AVX2 SIMD</span>
+              <span class="tag">gRPC</span><span class="tag">Raft</span><span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span><span class="tag">React</span>
+            </div>
+            <div class="project-links">
+              <a class="link-pill" href="https://github.com/dinnyyy/Distributed-Vector-Database" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <p class="group-label reveal">Past work</p>
+
+        <!-- StdOut -->
+        <article class="project reverse reveal">
+          <div class="project-media">
+            <img src="assets/img/stdout.svg" alt="StdOut — a terminal with code and a voice waveform" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-badges">
+              <span class="badge live">Live demo</span>
+              <span class="badge plain">Macathon 2026 · team of 3</span>
+            </div>
+            <h3>StdOut — AI Interview Simulator</h3>
+            <p class="summary">
+              A real-time technical-interview platform: live speech-to-text, a GPT-4o Realtime
+              AI interviewer, an in-browser Python code editor with instant execution, and a
+              diff timeline tracking every change. Built with a hackathon team; engineered a
+              low-latency pipeline that streams transcription, conversation, and code without
+              ever blocking the session.
+            </p>
+            <div class="project-stack">
+              <span class="tag">React 19</span><span class="tag">Node/Express</span><span class="tag">MongoDB</span>
+              <span class="tag">WebSockets</span><span class="tag">GPT-4o Realtime</span><span class="tag">CodeMirror</span>
+            </div>
+            <div class="project-links">
+              <a class="link-pill" href="https://std-out.vercel.app/?_vercel_share=ahPvvbRWMYQN6cXksRwdRKjogNyNYNm7" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                Live demo
+              </a>
+              <a class="link-pill" href="https://github.com/jeremyylimmm/StdOut" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Omni AR -->
+        <article class="project reveal">
+          <div class="project-media">
+            <img src="assets/img/omni-ar.svg" alt="Omni AR — a camera viewfinder with AR detection boxes" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-badges">
+              <span class="badge shipped">Shipped</span>
+              <span class="badge plain">Monash DeepNeuron · team</span>
+            </div>
+            <h3>Omni AR — Photographic Memory</h3>
+            <p class="summary">
+              A mobile augmented-reality assistant for "smart glasses" with a photographic-memory
+              feature. Walk around with your phone's camera and mic, ask questions about your
+              surroundings, and recall saved "memories" later just by asking. Gemini 2.5 Flash
+              handles fast vision and embeddings; a local vector database gives semantic recall,
+              with Whisper and TTS streamed over SSE for low latency.
+            </p>
+            <div class="project-stack">
+              <span class="tag">React</span><span class="tag">Flask</span><span class="tag">Gemini 2.5</span>
+              <span class="tag">Vector DB</span><span class="tag">Whisper</span><span class="tag">SSE</span>
+            </div>
+            <div class="project-links">
+              <a class="link-pill" href="https://github.com/AaronEliasZachariah/MDN-AR" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Maze Solver -->
+        <article class="project reverse reveal">
+          <div class="project-media">
+            <img src="assets/img/maze.svg" alt="Maze solver — a grid maze with a highlighted solution path" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-badges">
+              <span class="badge shipped">Complete</span>
+              <span class="badge plain">Personal</span>
+            </div>
+            <h3>Maze Solver &amp; Algorithm Visualiser</h3>
+            <p class="summary">
+              A Python pathfinding platform with three modes — play, watch, and race — visualising
+              seven algorithms (A*, BFS, DFS, Greedy, wall-follower, and random walks) across
+              procedurally generated mazes. Backed by a serious testing framework: property-based
+              testing with Hypothesis, visual snapshot tests, and performance benchmarking over
+              125,000+ simulated runs.
+            </p>
+            <div class="project-stack">
+              <span class="tag">Python</span><span class="tag">pygame</span><span class="tag">Hypothesis</span>
+              <span class="tag">pytest</span><span class="tag">NumPy</span><span class="tag">matplotlib</span>
+            </div>
+            <div class="project-links">
+              <a class="link-pill" href="https://github.com/dinnyyy/Interactive-Maze-Solver-Algorithm-Visualizer" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Volatility Forecasting -->
+        <article class="project reveal">
+          <div class="project-media">
+            <img src="assets/img/volatility.svg" alt="Volatility forecasting — a returns chart showing volatility clustering" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-badges">
+              <span class="badge shipped">Research report</span>
+              <span class="badge plain">Financial econometrics</span>
+            </div>
+            <h3>Volatility Forecasting with GARCH</h3>
+            <p class="summary">
+              A study applying a GARCH(1,1) model to a decade of S&amp;P 500 daily log returns to
+              capture time-varying volatility and clustering. Fitted by maximum likelihood and
+              validated with Ljung-Box and ARCH-LM diagnostics, then used to forecast conditional
+              variance 100 days ahead — automating the full data, evaluation, and reporting pipeline
+              in Python.
+            </p>
+            <div class="project-stack">
+              <span class="tag">Python</span><span class="tag">GARCH(1,1)</span><span class="tag">MLE</span>
+              <span class="tag">statsmodels</span><span class="tag">Time series</span>
+            </div>
+            <div class="project-links">
+              <a class="link-pill" href="assets/projects/volatility-forecasting-report.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+                Read the report
+              </a>
+              <a class="link-pill" href="https://github.com/dinnyyy/volatility-forecasting-garch" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Trading Bot -->
+        <article class="project reverse reveal">
+          <div class="project-media">
+            <img src="assets/img/trading-bot.svg" alt="Trading bot — candlestick chart with buy and sell signals" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-badges">
+              <span class="badge shipped">Deployed</span>
+              <span class="badge plain">Personal · first bot</span>
+            </div>
+            <h3>Algorithmic Trading Bot</h3>
+            <p class="summary">
+              My first end-to-end live trading bot, built to learn the full pipeline. It uses a
+              Hidden Markov Model to classify S&amp;P 500 market regimes from daily data, combines
+              RSI, ATR, and volatility signals into position sizing and trade logic, backtests the
+              strategy, and deploys to a Linux VPS via AWS Lambda and the Alpaca API for automated
+              paper trading.
+            </p>
+            <div class="project-stack">
+              <span class="tag">Python</span><span class="tag">HMM</span><span class="tag">AWS Lambda</span>
+              <span class="tag">Alpaca API</span><span class="tag">Backtesting</span>
+            </div>
+            <div class="project-links">
+              <a class="link-pill" href="https://github.com/dinnyyy/first_trading_bot" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== Certifications ===================== -->
+    <section class="section" id="certifications">
+      <div class="wrap">
+        <p class="eyebrow reveal">Certifications</p>
+        <h2 class="section-title reveal">Certifications &amp; credentials</h2>
+        <p class="section-lead reveal">Verified qualifications and academic distinctions.</p>
+
+        <div class="cert-grid">
+          <article class="cert reveal">
+            <div class="cert-thumb">
+              <img src="assets/certs/nvidia-cuda-cert.png" alt="NVIDIA certificate of competency for Joshua Dinn" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <p class="cert-issuer">NVIDIA</p>
+              <h3>Fundamentals of Accelerated Computing with Modern CUDA C++</h3>
+              <p class="cert-meta">Certificate of Competency · Issued Apr 2026</p>
+              <div class="project-links">
+                <a class="link-pill" href="https://learn.nvidia.com/certificates?id=7DMbTBibRmGC9NkTErVGbw" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                  Verify
+                </a>
+                <a class="link-pill" href="assets/certs/NVIDIA_CUDA_Fundamentals.pdf" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"/><path d="M14 2v6h6"/></svg>
+                  PDF
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="cert reveal">
+            <div class="cert-thumb" style="display:grid;place-items:center;background:linear-gradient(135deg,#101218,#161922);">
+              <span style="font-size:2.6rem;font-family:var(--font-mono);font-weight:700;background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;">79.97</span>
+            </div>
+            <div class="cert-body">
+              <p class="cert-issuer">Monash University</p>
+              <h3>Distinction — Software Engineering &amp; Econometrics</h3>
+              <p class="cert-meta">Weighted average · 2023 – present</p>
+              <div class="project-links">
+                <a class="link-pill" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+                  Résumé
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="cert reveal">
+            <div class="cert-thumb" style="display:grid;place-items:center;background:linear-gradient(135deg,#101218,#161922);">
+              <span style="font-size:2.6rem;font-family:var(--font-mono);font-weight:700;background:linear-gradient(120deg,var(--ok),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;">100%</span>
+            </div>
+            <div class="cert-body">
+              <p class="cert-issuer">Monash · FIT2107</p>
+              <h3>Software Quality &amp; Testing</h3>
+              <p class="cert-meta">Final grade · 100%</p>
+              <div class="project-links">
+                <a class="link-pill" href="#projects">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  See testing work
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Contact ===================== -->
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <h2>Let's build something</h2>
+          <p>I'm open to 2027 internships and interesting problems in systems, ML, and quantitative engineering. The fastest way to reach me is email.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:joshdinn01@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              joshdinn01@gmail.com
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/josh-dinn/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://github.com/dinnyyy" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <div class="brand" style="margin-bottom:6px;">
+          <span class="monogram">JD</span>
+          <span class="brand-name">Joshua Dinn</span>
+        </div>
+        <p class="muted">© <span id="year">2026</span> Joshua Dinn · Built from scratch, no frameworks.</p>
+      </div>
+      <div class="social">
+        <a href="https://github.com/dinnyyy" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/josh-dinn/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33 0-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.73v20.53C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.73C24 .78 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a href="mailto:joshdinn01@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
