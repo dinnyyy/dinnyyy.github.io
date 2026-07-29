@@ -15,3 +15,6 @@ Thumbs.db
 # Python (graphify venv)
 .venv/
 __pycache__/
+
+# Local tooling config (dev-server preview)
+/.claude/
