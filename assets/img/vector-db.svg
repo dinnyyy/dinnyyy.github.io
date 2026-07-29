@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Distributed vector database — connected nodes and a hashing ring">
+  <defs>
+    <linearGradient id="vdbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c1224"/>
+      <stop offset="1" stop-color="#131a33"/>
+    </linearGradient>
+    <linearGradient id="vacc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6ea8fe"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="vglow" cx="0.7" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#6ea8fe" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#6ea8fe" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#vdbg)"/>
+  <rect width="800" height="500" fill="url(#vglow)"/>
+  <g stroke="#6ea8fe" stroke-opacity="0.06">
+    <path d="M0 100H800M0 200H800M0 300H800M0 400H800"/>
+    <path d="M100 0V500M200 0V500M300 0V500M400 0V500M500 0V500M600 0V500M700 0V500"/>
+  </g>
+  <!-- hashing ring -->
+  <circle cx="400" cy="250" r="150" fill="none" stroke="#a78bfa" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="4 8"/>
+  <!-- edges -->
+  <g stroke="url(#vacc)" stroke-opacity="0.55" stroke-width="1.6" fill="none">
+    <path d="M400 100 L550 210 M400 100 L250 210 M250 210 L330 380 M550 210 L470 380 M330 380 L470 380 M400 100 L400 250 M550 210 L400 250 M250 210 L400 250 M330 380 L400 250 M470 380 L400 250"/>
+  </g>
+  <!-- nodes -->
+  <g>
+    <circle cx="400" cy="100" r="16" fill="url(#vacc)"/>
+    <circle cx="550" cy="210" r="12" fill="#0c1224" stroke="#6ea8fe" stroke-width="2"/>
+    <circle cx="250" cy="210" r="12" fill="#0c1224" stroke="#6ea8fe" stroke-width="2"/>
+    <circle cx="330" cy="380" r="12" fill="#0c1224" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="470" cy="380" r="12" fill="#0c1224" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="400" cy="250" r="22" fill="#0c1224" stroke="url(#vacc)" stroke-width="2.5"/>
+    <circle cx="400" cy="250" r="7" fill="url(#vacc)"/>
+  </g>
+  <text x="400" y="112" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#0c1224" font-weight="700">L</text>
+  <text x="44" y="452" font-family="ui-monospace,Menlo,monospace" font-size="15" fill="#c7d0e6" letter-spacing="1">HNSW · Raft · consistent hashing</text>
+  <text x="44" y="474" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#6ea8fe" letter-spacing="2" opacity="0.8">DISTRIBUTED VECTOR DATABASE</text>
+</svg>

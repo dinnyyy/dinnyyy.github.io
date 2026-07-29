@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="StdOut — a terminal window with code and a voice waveform">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1120"/>
+      <stop offset="1" stop-color="#101a2e"/>
+    </linearGradient>
+    <linearGradient id="sacc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#6ea8fe"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sbg)"/>
+  <!-- terminal window -->
+  <rect x="120" y="90" width="560" height="300" rx="14" fill="#0a0f1c" stroke="#ffffff" stroke-opacity="0.10"/>
+  <rect x="120" y="90" width="560" height="38" rx="14" fill="#111a2c"/>
+  <rect x="120" y="118" width="560" height="10" fill="#111a2c"/>
+  <circle cx="146" cy="109" r="6" fill="#ff5f56"/>
+  <circle cx="168" cy="109" r="6" fill="#ffbd2e"/>
+  <circle cx="190" cy="109" r="6" fill="#27c93f"/>
+  <text x="400" y="113" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#5b6b7c" fill-opacity="0.8">stdout — interview session</text>
+  <g font-family="ui-monospace,Menlo,monospace" font-size="14">
+    <text x="150" y="168" fill="#6ea8fe">def <tspan fill="#e8eaf0">two_sum</tspan>(nums, target):</text>
+    <text x="150" y="194" fill="#9aa2b1">    seen = {}</text>
+    <text x="150" y="220" fill="#9aa2b1">    for i, n in enumerate(nums):</text>
+    <text x="150" y="246" fill="#34d399">        if target - n in seen:</text>
+    <text x="150" y="272" fill="#9aa2b1">            return [seen[target-n], i]</text>
+    <text x="150" y="298" fill="#9aa2b1">        seen[n] = i</text>
+    <text x="150" y="332" fill="#a78bfa">▎ AI: walk me through your approach…</text>
+  </g>
+  <!-- waveform -->
+  <g transform="translate(150,352)" stroke="url(#sacc)" stroke-width="3" stroke-linecap="round">
+    <line x1="0" y1="0" x2="0" y2="10"/><line x1="12" y1="-8" x2="12" y2="18"/>
+    <line x1="24" y1="-16" x2="24" y2="26"/><line x1="36" y1="-6" x2="36" y2="16"/>
+    <line x1="48" y1="-20" x2="48" y2="30"/><line x1="60" y1="-3" x2="60" y2="13"/>
+    <line x1="72" y1="-12" x2="72" y2="22"/><line x1="84" y1="-18" x2="84" y2="28"/>
+    <line x1="96" y1="-5" x2="96" y2="15"/><line x1="108" y1="-10" x2="108" y2="20"/>
+    <line x1="120" y1="-2" x2="120" y2="12"/>
+  </g>
+  <text x="120" y="428" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#34d399" letter-spacing="2" opacity="0.85">REAL-TIME AI INTERVIEW SIMULATOR</text>
+</svg>
