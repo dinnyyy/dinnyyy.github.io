@@ -686,6 +686,10 @@ p {
   object-position: center;
 }
 
+/* Document-style media (e.g. a rendered report page): show the top, not letterboxed */
+.project-media.doc { background: #ffffff; }
+.project-media.doc img { object-fit: cover; object-position: top center; }
+
 /* Side-by-side grid for compact "past" projects */
 .project-grid {
   display: grid;
