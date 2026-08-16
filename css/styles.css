@@ -898,6 +898,7 @@ p {
     z-index: 105;
   }
   .sidebar-scrim.show { opacity: 1; pointer-events: auto; }
+  .nav-desktop-only { display: none; }
 }
 
 @media (max-width: 860px) {
