@@ -119,10 +119,10 @@
           <div class="about-body reveal">
             <p>
               I'm a dual-degree student at Monash University reading
-              <strong>Software Engineering</strong> and <strong>Econometrics</strong>,
-              which is a fancy way of saying I spend my time between two worlds: the
-              low-level systems that make software fast, and the statistical models that
-              make data mean something.
+              <strong>Software Engineering</strong> and <strong>Econometrics</strong>. I'm
+              most interested in where those two actually meet: machine learning and deep
+              learning grounded in real statistics, not just an imported library, running on
+              systems fast enough to make that math worth doing.
             </p>
             <p>
               At <strong>Monash DeepNeuron</strong> I build on-device AI memory systems and
@@ -132,10 +132,14 @@
               a <strong>Data, Analytics and Technology intern at the Collingwood Football Club</strong>.
             </p>
             <p>
-              My current focus is a <strong>distributed vector database written from
-              scratch in C++</strong>: HNSW indexing, AVX2 SIMD math, Raft consensus, and
-              Kubernetes orchestration. It's the kind of project that forces you to understand
-              every layer of the stack.
+              My current focus splits across two builds. A <strong>distributed vector
+              database written from scratch in C++</strong>, currently a working brute-force
+              baseline with a real benchmark harness, building toward HNSW indexing, AVX2
+              SIMD math, and Raft consensus. And <strong>JackTen</strong>, a no-limit hold'em
+              poker bot built from the math up: equity, EV, and Bayesian range updates first,
+              with deep learning for opponent behaviour modelling next. Different domains,
+              same interest underneath: statistics and machine learning, on systems I
+              understand end to end.
             </p>
             <aside class="about-card">
               <h3>Monash University</h3>
@@ -283,19 +287,56 @@
             </div>
             <h3>Distributed Vector Database</h3>
             <p class="summary">
-              A high-performance, distributed vector database built from scratch in C++20 to
-              index and search high-dimensional AI embeddings. HNSW graph indexing, AVX2 SIMD
-              distance math, a gRPC API, Raft consensus, and consistent-hashing sharding across
-              containerised nodes, plus a React dashboard to visualise node health and query
-              latency during induced failures.
+              A vector database built from scratch in C++20 to index and search
+              high-dimensional AI embeddings, with every claim backed by a real benchmark
+              harness (recall@k, QPS, latency percentiles) instead of one eyeballed number.
+              The brute-force baseline and harness are done; HNSW graph indexing, AVX2 SIMD
+              distance kernels, a gRPC service layer, and Raft-backed sharding across
+              containerised nodes are next.
             </p>
             <div class="project-stack">
               <span class="tag">C++20</span><span class="tag">HNSW</span><span class="tag">AVX2 SIMD</span>
               <span class="tag">gRPC</span><span class="tag">Raft</span><span class="tag">Docker</span>
-              <span class="tag">Kubernetes</span><span class="tag">React</span>
+              <span class="tag">React</span>
             </div>
             <div class="project-links">
               <a class="link-pill" href="https://github.com/dinnyyy/Distributed-Vector-Database" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- JackTen -->
+        <article class="project reveal">
+          <div class="project-media">
+            <img src="assets/img/jackten.svg" alt="JackTen, a 169-class poker starting hand range grid" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-badges">
+              <span class="badge progress">In progress</span>
+              <span class="badge plain">Personal</span>
+            </div>
+            <h3>JackTen: NLHE Poker Bot</h3>
+            <p class="summary">
+              A no-limit hold'em strategy engine, built from the math up rather than from a
+              library. The roadmap runs hand evaluation and equity first, then the EV, pot
+              odds, and minimum-defense-frequency formulas that drive every decision, then
+              Bayesian range updates and opponent stats (VPIP, PFR, 3-bet%) for exploitative
+              play. I'm currently through the equity and EV layers. Next up is deep learning
+              for opponent behaviour: sequence models (LSTM and, if the data supports it,
+              transformer-based) trained on hand-history action sequences to predict
+              opponent tendencies and ranges, feeding into the same Bayesian updates rather
+              than replacing them.
+            </p>
+            <div class="project-stack">
+              <span class="tag">Python</span><span class="tag">Game Theory</span>
+              <span class="tag">Bayesian Inference</span><span class="tag">Equity / EV</span>
+              <span class="tag">LSTM</span><span class="tag">Deep Learning</span>
+            </div>
+            <div class="project-links">
+              <a class="link-pill" href="https://github.com/dinnyyy/JackTen" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
                 Source
               </a>
