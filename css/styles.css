@@ -817,13 +817,6 @@ p {
 
 /* ---------- Contact ---------- */
 .contact-block { margin-top: 20px; }
-.ct-line {
-  font-family: var(--font-mono);
-  font-size: 0.86rem;
-  color: var(--text-faint);
-  margin-bottom: 16px;
-}
-.ct-line .prompt { color: var(--accent); font-weight: 700; margin-right: 8px; }
 .ct-links {
   display: flex;
   flex-wrap: wrap;
@@ -905,7 +898,6 @@ p {
     z-index: 105;
   }
   .sidebar-scrim.show { opacity: 1; pointer-events: auto; }
-  .nav-desktop-only { display: none; }
 }
 
 @media (max-width: 860px) {
