@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joshua Dinn, Software &amp; Systems Engineer</title>
-  <meta name="description" content="Joshua Dinn, a software engineering and econometrics student at Monash, building low-level systems, machine-learning pipelines, and quantitative tools. Projects, experience, and certifications." />
+  <title>Joshua Dinn, Software Engineer &amp; Quant</title>
+  <meta name="description" content="Joshua Dinn, a software engineering and econometrics student at Monash, building statistics-driven machine learning and quantitative tools. Projects, experience, and certifications." />
   <meta name="author" content="Joshua Dinn" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Joshua Dinn, Software &amp; Systems Engineer" />
-  <meta property="og:description" content="Low-level systems, machine learning, and quantitative engineering. Projects, experience, and certifications." />
+  <meta property="og:title" content="Joshua Dinn, Software Engineer &amp; Quant" />
+  <meta property="og:description" content="Statistics, machine learning, and quantitative engineering. Projects, experience, and certifications." />
   <meta property="og:url" content="https://dinnyyy.github.io/" />
   <meta property="og:image" content="https://dinnyyy.github.io/assets/img/vector-db.svg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -45,16 +45,17 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="Joshua Dinn, home">
+        <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="monogram">JD</span>
-        <span class="brand-name">Joshua Dinn<small>Software &amp; Systems</small></span>
+        <span class="brand-name">Joshua Dinn<small>~/software-engineer</small></span>
       </a>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#experience">experience</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#certifications">certifications</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -78,14 +79,30 @@
   <main>
     <!-- ===================== Hero ===================== -->
     <section class="hero wrap">
-      <span class="hero-status"><span class="dot"></span> Open to 2026/2027 internships · Melbourne, Australia</span>
-      <h1>Joshua <span class="accent">Dinn</span></h1>
-      <p class="role">Software &amp; Systems Engineer <span class="sep">/</span> Quant &amp; ML</p>
-      <p class="hero-lead">
-        Software Engineering &amp; Econometrics student at Monash University, focused on
-        machine learning and statistics, built on systems fast enough to run them:
-        low-level C++, distributed infrastructure, and quantitative finance tools.
-      </p>
+      <div class="term-pane reveal">
+        <div class="term-pane-bar">
+          <span class="win-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="term-filename">intro.sh</span>
+        </div>
+        <div class="term-body">
+          <p class="term-line"><span class="prompt-sym">guest@joshua-dinn ~ %</span> whoami</p>
+          <div class="term-output">
+            <h1>Joshua <span class="accent">Dinn</span></h1>
+            <p class="role">Software Engineer <span class="sep">/</span> Quant &amp; ML</p>
+          </div>
+          <p class="term-comment"><span class="dot"></span> Open to 2026/2027 internships · Melbourne, Australia</p>
+
+          <p class="term-line"><span class="prompt-sym">guest@joshua-dinn ~ %</span> cat about.txt</p>
+          <p class="term-output hero-lead">
+            Software Engineering &amp; Econometrics student at Monash University. I love
+            solving problems with statistics and machine learning, and I like doing it
+            with a team.
+          </p>
+
+          <p class="term-line"><span class="prompt-sym">guest@joshua-dinn ~ %</span> <span class="blink-cursor">&#9608;</span></p>
+        </div>
+      </div>
+
       <div class="hero-cta">
         <a class="btn btn-primary" href="#projects">
           View projects
@@ -112,30 +129,33 @@
     <!-- ===================== About ===================== -->
     <section class="section" id="about">
       <div class="wrap">
-        <p class="eyebrow reveal">About</p>
-        <h2 class="section-title reveal">Software, systems, and statistics</h2>
+        <p class="eyebrow reveal">cat about.md</p>
+        <h2 class="section-title reveal">Statistics, software, and solving problems</h2>
 
         <div class="about-grid">
           <div class="about-body reveal">
             <p>
-              I'm doing a dual degree in <strong>Software Engineering</strong> and
-              <strong>Econometrics</strong> at Monash. Machine learning and stats are what
-              I care about most, but I like understanding the systems underneath them too.
+              I've always loved numbers, the kind that make you want to sit down and
+              actually solve something. I'm doing a dual degree in
+              <strong>Software Engineering</strong> and <strong>Econometrics</strong> at
+              Monash, chasing statistics, machine learning, and problems that don't have a
+              clean answer yet.
             </p>
             <p>
               At <strong>Monash DeepNeuron</strong> I built on-device AI memory systems and
               taught C++, CUDA, and high-performance computing alongside NVIDIA and the
               Pawsey Supercomputing Centre. On the quant side I've built trading systems,
-              volatility models, and churn-prediction pipelines, most recently as a
-              <strong>Data, Analytics and Technology intern at the Collingwood Football Club</strong>.
+              volatility models, and churn-prediction pipelines, most recently interning in
+              <strong>Data, Analytics and Technology at the Collingwood Football Club</strong>.
             </p>
             <p>
-              Right now I'm splitting time between a <strong>distributed vector database
-              written from scratch in C++</strong> (brute-force baseline and benchmark
-              harness done, HNSW, AVX2 SIMD, and Raft next) and <strong>JackTen</strong>, a
-              no-limit hold'em poker bot. JackTen started as equity and EV math, now moving
-              into Bayesian range updates, with deep learning for opponent modelling planned
-              after that.
+              Outside class I like picking something hard and working through it end to
+              end, usually with other people if I can. Right now that's
+              <strong>JackTen</strong>, a poker bot built from the math up (equity and EV
+              first, Bayesian range updates now, deep learning for opponent modelling next),
+              and a <strong>vector database</strong> I'm building in C++ to properly
+              understand what's happening under an ML pipeline. Different problems, same
+              thing pulling me in: stats, numbers, and figuring out what actually works.
             </p>
             <aside class="about-card">
               <h3>Monash University</h3>
@@ -191,7 +211,7 @@
     <!-- ===================== Experience ===================== -->
     <section class="section" id="experience">
       <div class="wrap">
-        <p class="eyebrow reveal">Experience</p>
+        <p class="eyebrow reveal">cat experience.log</p>
         <h2 class="section-title reveal">Roles &amp; teams</h2>
         <p class="section-lead reveal">A mix of engineering, applied AI, and quantitative analytics, across research teams, industry, and teaching.</p>
 
@@ -260,7 +280,7 @@
       <div class="wrap">
         <div class="projects-head">
           <div>
-            <p class="eyebrow reveal">Projects</p>
+            <p class="eyebrow reveal">ls projects/</p>
             <h2 class="section-title reveal">Selected work</h2>
           </div>
           <a class="btn btn-ghost btn-sm reveal" href="https://github.com/dinnyyy" target="_blank" rel="noopener">
@@ -514,7 +534,7 @@
     <!-- ===================== Certifications ===================== -->
     <section class="section" id="certifications">
       <div class="wrap">
-        <p class="eyebrow reveal">Certifications</p>
+        <p class="eyebrow reveal">ls certifications/</p>
         <h2 class="section-title reveal">Certifications &amp; credentials</h2>
         <p class="section-lead reveal">Verified qualifications and academic distinctions.</p>
 
@@ -580,9 +600,10 @@
     <!-- ===================== Contact ===================== -->
     <section class="section" id="contact">
       <div class="wrap">
+        <p class="eyebrow reveal">./contact.sh</p>
         <div class="contact-card reveal">
           <h2>Let's build something</h2>
-          <p>I'm open to 2026/2027 internships, and interesting problems in systems, ML, and statistical modelling. The fastest way to reach me is email.</p>
+          <p>I'm open to 2026/2027 internships, and interesting problems in ML, statistics, and software. The fastest way to reach me is email.</p>
           <div class="contact-actions">
             <a class="btn btn-primary" href="mailto:joshdinn01@gmail.com">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
