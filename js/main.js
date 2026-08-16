@@ -1,5 +1,5 @@
 /* =============================================================
-   Interactions: theme toggle, mobile nav, scrollspy, reveal
+   Interactions: theme toggle, sidebar explorer, scrollspy, reveal
    ============================================================= */
 (function () {
   "use strict";
@@ -23,37 +23,41 @@
     });
   }
 
-  /* ---- Sticky header shadow ---- */
-  var header = document.querySelector(".site-header");
+  /* ---- Tab bar shadow on scroll ---- */
+  var tabbar = document.querySelector(".tabbar");
   function onScroll() {
-    if (header) header.classList.toggle("scrolled", window.scrollY > 8);
+    if (tabbar) tabbar.classList.toggle("scrolled", window.scrollY > 8);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---- Mobile nav ---- */
-  var navToggle = document.querySelector(".nav-toggle");
-  var navLinks = document.getElementById("nav-links");
-  function closeNav() {
-    if (!navLinks) return;
-    navLinks.classList.remove("open");
-    if (navToggle) navToggle.setAttribute("aria-expanded", "false");
+  /* ---- Mobile file-explorer sidebar ---- */
+  var explorerToggle = document.querySelector(".explorer-toggle");
+  var sidebar = document.getElementById("file-tree");
+  var scrim = document.querySelector(".sidebar-scrim");
+  function closeSidebar() {
+    if (!sidebar) return;
+    sidebar.classList.remove("open");
+    if (scrim) scrim.classList.remove("show");
+    if (explorerToggle) explorerToggle.setAttribute("aria-expanded", "false");
   }
-  if (navToggle && navLinks) {
-    navToggle.addEventListener("click", function () {
-      var open = navLinks.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  if (explorerToggle && sidebar) {
+    explorerToggle.addEventListener("click", function () {
+      var open = sidebar.classList.toggle("open");
+      if (scrim) scrim.classList.toggle("show", open);
+      explorerToggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
-    navLinks.addEventListener("click", function (e) {
-      if (e.target.closest("a")) closeNav();
+    sidebar.addEventListener("click", function (e) {
+      if (e.target.closest("a")) closeSidebar();
     });
+    if (scrim) scrim.addEventListener("click", closeSidebar);
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeNav();
+      if (e.key === "Escape") closeSidebar();
     });
   }
 
-  /* ---- Scrollspy: highlight active nav link ---- */
-  var links = Array.prototype.slice.call(document.querySelectorAll(".nav-links a[href^='#']"));
+  /* ---- Scrollspy: highlight active tab + sidebar file ---- */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".spy-link[href^='#']"));
   var sections = links
     .map(function (a) { return document.querySelector(a.getAttribute("href")); })
     .filter(Boolean);
