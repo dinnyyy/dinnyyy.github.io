@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joshua Dinn, Software Engineer &amp; Quant</title>
-  <meta name="description" content="Joshua Dinn, a software engineering and econometrics student at Monash, building statistics-driven machine learning and quantitative tools. Projects, experience, and certifications." />
+  <meta name="description" content="Joshua Dinn, a software engineering and econometrics student at Monash, working across data science, machine learning, and quantitative modelling. Projects, experience, and certifications." />
   <meta name="author" content="Joshua Dinn" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Joshua Dinn, Software Engineer &amp; Quant" />
-  <meta property="og:description" content="Statistics, machine learning, and quantitative engineering. Projects, experience, and certifications." />
+  <meta property="og:description" content="Statistics, data science, machine learning, and quantitative engineering. Projects, experience, and certifications." />
   <meta property="og:url" content="https://dinnyyy.github.io/" />
-  <meta property="og:image" content="https://dinnyyy.github.io/assets/img/vector-db.svg" />
+  <meta property="og:image" content="https://dinnyyy.github.io/assets/img/harvest-ai.svg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -76,8 +76,9 @@
       <a class="file spy-link" href="#about">about.md</a>
       <a class="file spy-link" href="#experience">experience.log</a>
       <p class="sidebar-label folder">projects</p>
-      <a class="file nested spy-link" href="#projects">vector-database.cpp</a>
+      <a class="file nested spy-link" href="#projects">harvest-ai.py</a>
       <a class="file nested spy-link" href="#projects">jackten.py</a>
+      <a class="file nested spy-link" href="#projects">ols-vs-mle.py</a>
       <a class="file nested spy-link" href="#projects">stdout.tsx</a>
       <a class="file nested spy-link" href="#projects">omni-ar.tsx</a>
       <a class="file nested spy-link" href="#projects">maze-solver.py</a>
@@ -99,8 +100,8 @@
         <p class="who-line"><span class="prompt">$</span>cat about.txt</p>
         <p class="hero-lead">
           Software Engineering &amp; Econometrics student at Monash University. I love
-          solving problems with statistics and machine learning, and I like doing it
-          with a team.
+          solving problems with statistics, data science, and machine learning, and I
+          like doing it with a team.
         </p>
 
         <div class="hero-cta">
@@ -129,7 +130,7 @@
       <!-- ===================== About ===================== -->
       <section class="ed-block" id="about">
         <p class="ed-head">about.md</p>
-        <h2 class="ed-title">Statistics, software, and solving problems</h2>
+        <h2 class="ed-title">Statistics, data science, and solving problems</h2>
 
         <div class="about-grid">
           <div class="about-body reveal">
@@ -137,24 +138,28 @@
               I've always loved numbers, the kind that make you want to sit down and
               actually solve something. I'm doing a dual degree in
               <strong>Software Engineering</strong> and <strong>Econometrics</strong> at
-              Monash, chasing statistics, machine learning, and problems that don't have a
+              Monash, which puts me somewhere between <strong>data science</strong> and
+              systems work: statistics, machine learning, and problems that don't have a
               clean answer yet.
             </p>
             <p>
               At <strong>Monash DeepNeuron</strong> I built on-device AI memory systems and
               taught C++, CUDA, and high-performance computing alongside NVIDIA and the
-              Pawsey Supercomputing Centre. On the quant side I've built trading systems,
-              volatility models, and churn-prediction pipelines, most recently interning in
+              Pawsey Supercomputing Centre. On the data science and quant side I've built
+              trading systems, volatility models, and churn-prediction pipelines, most
+              recently interning in
               <strong>Data, Analytics and Technology at the Collingwood Football Club</strong>.
             </p>
             <p>
               Outside class I like picking something hard and working through it end to
-              end, usually with other people if I can. Right now that's
-              <strong>JackTen</strong>, a poker bot built from the math up (equity and EV
-              first, Bayesian range updates now, deep learning for opponent modelling next),
-              and a <strong>vector database</strong> I'm building in C++ to properly
-              understand what's happening under an ML pipeline. Different problems, same
-              thing pulling me in: stats, numbers, and figuring out what actually works.
+              end, usually with other people if I can. Right now that's three things.
+              <strong>HarvestAI</strong> at DeepNeuron, where I'm on the software team
+              teaching a robot arm to spot ripe strawberries. <strong>JackTen</strong>, a
+              poker bot built from the math up (equity and EV first, Bayesian range updates
+              now, deep learning for opponent modelling next). And a Monte Carlo study
+              putting <strong>OLS against maximum likelihood</strong> when the textbook
+              assumptions break. Different problems, same thing pulling me in: stats,
+              numbers, and figuring out what actually works.
             </p>
             <aside class="about-card">
               <h3>Monash University</h3>
@@ -191,16 +196,18 @@
             </ul>
           </div>
           <div class="skill-card reveal">
-            <h4>Cloud &amp; Tools</h4>
+            <h4>Frameworks &amp; Tools</h4>
             <ul class="tags">
-              <li class="tag">AWS</li><li class="tag">MongoDB</li><li class="tag">Git</li>
+              <li class="tag">React</li><li class="tag">Node.js</li><li class="tag">AWS</li>
+              <li class="tag">MongoDB</li><li class="tag">Git</li><li class="tag">Linux</li>
             </ul>
           </div>
           <div class="skill-card reveal">
-            <h4>Data &amp; Quant</h4>
+            <h4>Data Science &amp; Quant</h4>
             <ul class="tags">
-              <li class="tag">pandas</li><li class="tag">NumPy</li><li class="tag">PyTorch</li><li class="tag">XGBoost</li>
-              <li class="tag">Snowflake</li><li class="tag">OxMetrics</li><li class="tag">React</li><li class="tag">Node.js</li>
+              <li class="tag">pandas</li><li class="tag">NumPy</li><li class="tag">scikit-learn</li><li class="tag">PyTorch</li>
+              <li class="tag">OpenCV</li><li class="tag">XGBoost</li><li class="tag">SHAP</li><li class="tag">statsmodels</li>
+              <li class="tag">Snowflake</li><li class="tag">OxMetrics</li>
             </ul>
           </div>
         </div>
@@ -220,6 +227,7 @@
               <span class="log-role">Optimised Computing Member</span>
             </p>
             <ul>
+              <li>On the software team for HarvestAI, a robotic arm that picks strawberries autonomously. I work on the computer-vision perception module: curating and augmenting the training data, then training an object-detection model to find individual strawberries in a live camera feed and classify how ripe they are, with training runs accelerated on HPC clusters.</li>
               <li>Building an on-device AI memory system for AR glasses: a vector database with HNSW indexing and approximate nearest-neighbour search powering a low-latency retrieval-augmented generation (RAG) pipeline.</li>
               <li>Teaching Assistant for an 8-week C++ and accelerated-computing workshop on GPU programming, CUDA, and HPC, run with NVIDIA, the Pawsey Supercomputing Centre, and NCI.</li>
               <li>NVIDIA CUDA certified through the program.</li>
@@ -291,29 +299,28 @@
 
         <p class="dir-comment">currently building</p>
         <div class="file-list">
-          <!-- Distributed Vector Database -->
+          <!-- HarvestAI -->
           <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/vector-db.svg" alt="Distributed vector database diagram" loading="lazy" /></div>
+            <div class="f-thumb"><img src="assets/img/harvest-ai.svg" alt="HarvestAI camera view with detection boxes over ripe and unripe strawberries" loading="lazy" /></div>
             <div class="f-main">
               <div class="f-head">
-                <span class="f-name">Distributed Vector Database</span>
+                <span class="f-name">HarvestAI: Strawberry-Picking Robot</span>
                 <span class="f-status wip">WIP</span>
               </div>
-              <p class="f-tags"><span>C++20</span><span>HNSW</span><span>AVX2 SIMD</span><span>gRPC</span><span>Raft</span><span>Docker</span><span>React</span></p>
+              <p class="f-tags"><span>Python</span><span>Computer Vision</span><span>Object Detection</span><span>PyTorch</span><span>OpenCV</span><span>HPC</span><span>Robotics</span></p>
               <p class="f-desc">
-                A vector database built from scratch in C++20 to index and search
-                high-dimensional AI embeddings, with every claim backed by a real benchmark
-                harness (recall@k, QPS, latency percentiles) instead of one eyeballed number.
-                The brute-force baseline and harness are done; HNSW graph indexing, AVX2 SIMD
-                distance kernels, a gRPC service layer, and Raft-backed sharding across
-                containerised nodes are next.
+                A Monash DeepNeuron team project building a robotic arm that finds ripe
+                strawberries and picks them on its own. Strawberries are a hard target: every
+                berry ripens at its own pace, they bruise easily, and half of them sit behind a
+                leaf, which is why the job is still done by hand. I'm on the software team,
+                working on the perception module that everything downstream depends on:
+                curating and augmenting the strawberry image set, then training an
+                object-detection model to box individual berries in a live camera feed and
+                classify ripeness in real time, with training accelerated on HPC clusters.
+                Those detections become the 3D grasp point the arm actually reaches for, so a
+                miss is not just a bad number on a chart. Next up is segmentation, so the model
+                keeps working when a berry is half hidden by leaves.
               </p>
-              <div class="f-links">
-                <a href="https://github.com/dinnyyy/Distributed-Vector-Database" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
-                  Source
-                </a>
-              </div>
             </div>
           </article>
 
@@ -339,6 +346,36 @@
               </p>
               <div class="f-links">
                 <a href="https://github.com/dinnyyy/JackTen" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- OLS vs MLE -->
+          <article class="file-row reveal">
+            <div class="f-thumb"><img src="assets/img/ols-vs-mle.svg" alt="Sampling distributions of an OLS and a maximum likelihood estimator around the true parameter" loading="lazy" /></div>
+            <div class="f-main">
+              <div class="f-head">
+                <span class="f-name">OLS vs MLE: A Monte Carlo Study</span>
+                <span class="f-status wip">WIP</span>
+              </div>
+              <p class="f-tags"><span>Python</span><span>Monte Carlo</span><span>Econometrics</span><span>MLE</span><span>NumPy / SciPy</span><span>statsmodels</span></p>
+              <p class="f-desc">
+                OLS is the default regression tool, but it is only the best one when a specific
+                set of textbook assumptions holds, and real data breaks them constantly: fat
+                tails, non-constant variance, outcomes that are counts or yes/no rather than
+                continuous. This project stops asserting how much that costs you and measures
+                it. I simulate thousands of datasets where I know the true parameter, fit both
+                OLS and the correctly specified maximum likelihood alternative to each, and
+                track bias, efficiency, and whether a 95% confidence interval actually contains
+                the truth 95% of the time. The Poisson MLE is derived and solved by hand with
+                Newton-Raphson rather than handed to a library, so the write-up can show the
+                estimator from first principles. It ships as a written report, not just a repo.
+              </p>
+              <div class="f-links">
+                <a href="https://github.com/dinnyyy/ols-vs-mle" target="_blank" rel="noopener">
                   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
                   Source
                 </a>
@@ -547,7 +584,7 @@
         <p class="ed-head">contact.sh</p>
         <div class="contact-block">
           <h2 class="ed-title">Let's build something</h2>
-          <p class="hero-lead">I'm open to 2026/2027 internships, and interesting problems in ML, statistics, and software. The fastest way to reach me is email.</p>
+          <p class="hero-lead">I'm open to 2026/2027 internships, and interesting problems in data science, statistics, and software. The fastest way to reach me is email.</p>
           <div class="ct-links">
             <a class="btn btn-primary" href="mailto:joshdinn01@gmail.com">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
@@ -555,6 +592,13 @@
             </a>
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/josh-dinn/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="btn btn-ghost" href="https://github.com/dinnyyy" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <p class="resume-label">Resume, by role</p>
+          <div class="ct-links">
+            <a class="btn btn-ghost btn-sm" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">Software Engineering</a>
+            <a class="btn btn-ghost btn-sm" href="assets/resume/Joshua_Dinn_Data_Science.pdf" target="_blank" rel="noopener">Data Science</a>
+            <a class="btn btn-ghost btn-sm" href="assets/resume/Joshua_Dinn_Quantitative.pdf" target="_blank" rel="noopener">Quantitative</a>
+            <a class="btn btn-ghost btn-sm" href="assets/resume/Joshua_Dinn_Analyst.pdf" target="_blank" rel="noopener">Analyst</a>
           </div>
         </div>
       </section>

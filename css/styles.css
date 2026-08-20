@@ -1,12 +1,12 @@
 /* =============================================================
-   Joshua Dinn — portfolio
+   Joshua Dinn, portfolio
    IDE-shell layout: tab bar + file-tree sidebar + editor pane.
    Dark-first, theme-aware. Design tokens live in :root.
    ============================================================= */
 
 /* ---------- Design tokens ---------- */
 :root {
-  /* dark (default) — terminal/console palette */
+  /* dark (default), terminal/console palette */
   --bg: #0a0d0a;
   --bg-elev: #10140f;
   --bg-elev-2: #171c16;
@@ -822,6 +822,14 @@ p {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 24px;
+}
+.resume-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 28px 0 -14px;
 }
 
 /* =============================================================

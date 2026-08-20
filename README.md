@@ -1,6 +1,6 @@
 # dinnyyy.github.io
 
-Personal portfolio site for **Joshua Dinn** — a second résumé covering projects,
+Personal portfolio site for **Joshua Dinn**, a second résumé covering projects,
 experience, and certifications. Built as a single scrollable page with anchored
 navigation.
 
@@ -8,7 +8,7 @@ navigation.
 
 ## Stack
 
-Plain static HTML, CSS, and vanilla JavaScript — no build step, no dependencies.
+Plain static HTML, CSS, and vanilla JavaScript. No build step, no dependencies.
 Served directly by GitHub Pages from the `main` branch (user site).
 
 ## Structure
@@ -20,7 +20,7 @@ Served directly by GitHub Pages from the `main` branch (user site).
 ├── js/main.js            # Theme toggle, mobile nav, smooth scroll, scrollspy
 ├── assets/
 │   ├── img/              # Project placeholder art (SVG) + photos
-│   ├── resume/           # Downloadable résumés (software / analyst)
+│   ├── resume/           # Downloadable résumés (software / data science / quant / analyst)
 │   ├── certs/            # Certificate PDFs + images
 │   └── projects/         # Project supporting files (e.g. GARCH report PDF)
 └── .nojekyll             # Serve files as-is (skip Jekyll processing)

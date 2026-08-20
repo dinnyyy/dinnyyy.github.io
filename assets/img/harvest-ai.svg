@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="HarvestAI perception view: strawberries in a live camera feed with detection boxes and ripeness confidence labels">
+  <defs>
+    <linearGradient id="hbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0d0a"/>
+      <stop offset="1" stop-color="#111611"/>
+    </linearGradient>
+    <radialGradient id="hglow" cx="0.72" cy="0.28" r="0.85">
+      <stop offset="0" stop-color="#33e6a0" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#33e6a0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hripe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff5f6d"/>
+      <stop offset="1" stop-color="#c1121f"/>
+    </linearGradient>
+    <linearGradient id="hunripe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6e26a"/>
+      <stop offset="1" stop-color="#8ca62f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#hbg)"/>
+  <rect width="800" height="500" fill="url(#hglow)"/>
+
+  <g stroke="#33e6a0" stroke-opacity="0.05">
+    <path d="M0 100H800M0 200H800M0 300H800M0 400H800"/>
+    <path d="M100 0V500M200 0V500M300 0V500M400 0V500M500 0V500M600 0V500M700 0V500"/>
+  </g>
+
+  <!-- leaves / canopy -->
+  <g fill="#1c3b28" fill-opacity="0.85">
+    <ellipse cx="180" cy="120" rx="120" ry="42" transform="rotate(-12 180 120)"/>
+    <ellipse cx="600" cy="150" rx="140" ry="46" transform="rotate(9 600 150)"/>
+    <ellipse cx="360" cy="330" rx="130" ry="40" transform="rotate(-6 360 330)"/>
+    <ellipse cx="660" cy="400" rx="110" ry="38" transform="rotate(14 660 400)"/>
+  </g>
+  <g stroke="#2c6b45" stroke-opacity="0.6" stroke-width="3" fill="none">
+    <path d="M170 140C190 190 210 210 236 232"/>
+    <path d="M600 172C575 210 560 232 542 252"/>
+    <path d="M352 350C356 372 358 384 360 396"/>
+  </g>
+
+  <!-- ripe strawberry, detected -->
+  <g>
+    <path d="M236 232c30 0 50 20 50 44 0 32-30 62-50 78-20-16-50-46-50-78 0-24 20-44 50-44Z" fill="url(#hripe)"/>
+    <g fill="#ffe8a3" fill-opacity="0.85">
+      <circle cx="222" cy="262" r="3"/><circle cx="250" cy="258" r="3"/><circle cx="236" cy="286" r="3"/>
+      <circle cx="212" cy="290" r="3"/><circle cx="260" cy="288" r="3"/><circle cx="236" cy="314" r="3"/>
+    </g>
+    <path d="M212 232h48l-10 -14h-28Z" fill="#2c6b45"/>
+    <rect x="176" y="218" width="120" height="150" rx="4" fill="none" stroke="#33e6a0" stroke-width="3"/>
+    <rect x="176" y="192" width="176" height="24" rx="3" fill="#33e6a0"/>
+    <text x="186" y="209" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" fill="#07120c">ripe 0.94</text>
+  </g>
+
+  <!-- second ripe strawberry, detected -->
+  <g>
+    <path d="M542 252c24 0 40 16 40 35 0 26-24 50-40 63-16-13-40-37-40-63 0-19 16-35 40-35Z" fill="url(#hripe)"/>
+    <g fill="#ffe8a3" fill-opacity="0.85">
+      <circle cx="531" cy="277" r="2.6"/><circle cx="554" cy="274" r="2.6"/><circle cx="542" cy="297" r="2.6"/>
+      <circle cx="524" cy="300" r="2.6"/><circle cx="561" cy="299" r="2.6"/>
+    </g>
+    <path d="M523 252h38l-8 -11h-22Z" fill="#2c6b45"/>
+    <rect x="492" y="240" width="100" height="122" rx="4" fill="none" stroke="#33e6a0" stroke-width="3"/>
+    <rect x="492" y="214" width="176" height="24" rx="3" fill="#33e6a0"/>
+    <text x="502" y="231" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" fill="#07120c">ripe 0.88</text>
+  </g>
+
+  <!-- unripe strawberry, detected and skipped -->
+  <g>
+    <path d="M360 396c22 0 36 15 36 32 0 23-22 45-36 57-14-12-36-34-36-57 0-17 14-32 36-32Z" fill="url(#hunripe)"/>
+    <path d="M342 396h36l-8 -10h-20Z" fill="#2c6b45"/>
+    <rect x="312" y="384" width="94" height="112" rx="4" fill="none" stroke="#22d3ee" stroke-width="3" stroke-dasharray="8 6"/>
+    <rect x="312" y="358" width="186" height="24" rx="3" fill="#22d3ee"/>
+    <text x="322" y="375" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" fill="#04161a">unripe 0.91</text>
+  </g>
+
+  <!-- HUD -->
+  <g>
+    <rect x="28" y="28" width="196" height="34" rx="6" fill="#07120c" fill-opacity="0.72" stroke="#33e6a0" stroke-opacity="0.35"/>
+    <circle cx="48" cy="45" r="6" fill="#ff5f6d"/>
+    <text x="64" y="51" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#9fe8c6">LIVE  detect: 3</text>
+  </g>
+  <g stroke="#33e6a0" stroke-width="3" fill="none" stroke-opacity="0.55">
+    <path d="M28 440v32h32"/><path d="M772 440v32h-32"/>
+  </g>
+</svg>
