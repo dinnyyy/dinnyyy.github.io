@@ -361,7 +361,7 @@
                 <span class="f-name">OLS vs MLE: A Monte Carlo Study</span>
                 <span class="f-status wip">WIP</span>
               </div>
-              <p class="f-tags"><span>Python</span><span>Monte Carlo</span><span>Econometrics</span><span>MLE</span><span>NumPy / SciPy</span><span>statsmodels</span></p>
+              <p class="f-tags"><span>Python</span><span>Monte Carlo</span><span>Econometrics</span><span>MLE</span><span>Cram&eacute;r-Rao Bound</span><span>NumPy / SciPy</span><span>statsmodels</span></p>
               <p class="f-desc">
                 OLS is the default regression tool, but it is only the best one when a specific
                 set of textbook assumptions holds, and real data breaks them constantly: fat
@@ -370,9 +370,13 @@
                 it. I simulate thousands of datasets where I know the true parameter, fit both
                 OLS and the correctly specified maximum likelihood alternative to each, and
                 track bias, efficiency, and whether a 95% confidence interval actually contains
-                the truth 95% of the time. The Poisson MLE is derived and solved by hand with
-                Newton-Raphson rather than handed to a library, so the write-up can show the
-                estimator from first principles. It ships as a written report, not just a repo.
+                the truth 95% of the time. Everything also gets held against the Cram&eacute;r-Rao
+                lower bound, the hard limit on how precise any unbiased estimator can be: the
+                simple Poisson rate hits that bound exactly at any sample size, the regression
+                MLE only closes on it as the sample grows, and OLS provably sits above it once
+                its assumptions break. Both derivations are worked by hand, with the Poisson
+                regression MLE solved by Newton-Raphson rather than handed to a library. It
+                ships as a written report, not just a repo.
               </p>
               <div class="f-links">
                 <a href="https://github.com/dinnyyy/ols-vs-mle" target="_blank" rel="noopener">
@@ -592,13 +596,6 @@
             </a>
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/josh-dinn/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="btn btn-ghost" href="https://github.com/dinnyyy" target="_blank" rel="noopener">GitHub</a>
-          </div>
-          <p class="resume-label">Resume, by role</p>
-          <div class="ct-links">
-            <a class="btn btn-ghost btn-sm" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">Software Engineering</a>
-            <a class="btn btn-ghost btn-sm" href="assets/resume/Joshua_Dinn_Data_Science.pdf" target="_blank" rel="noopener">Data Science</a>
-            <a class="btn btn-ghost btn-sm" href="assets/resume/Joshua_Dinn_Quantitative.pdf" target="_blank" rel="noopener">Quantitative</a>
-            <a class="btn btn-ghost btn-sm" href="assets/resume/Joshua_Dinn_Analyst.pdf" target="_blank" rel="noopener">Analyst</a>
           </div>
         </div>
       </section>

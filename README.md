@@ -20,7 +20,7 @@ Served directly by GitHub Pages from the `main` branch (user site).
 ├── js/main.js            # Theme toggle, mobile nav, smooth scroll, scrollspy
 ├── assets/
 │   ├── img/              # Project placeholder art (SVG) + photos
-│   ├── resume/           # Downloadable résumés (software / data science / quant / analyst)
+│   ├── resume/           # Downloadable résumé (software engineering)
 │   ├── certs/            # Certificate PDFs + images
 │   └── projects/         # Project supporting files (e.g. GARCH report PDF)
 └── .nojekyll             # Serve files as-is (skip Jekyll processing)
