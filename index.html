@@ -12,7 +12,7 @@
   <meta property="og:title" content="Joshua Dinn, Software Engineer &amp; Quant" />
   <meta property="og:description" content="Statistics, data science, machine learning, and quantitative engineering. Projects, experience, and certifications." />
   <meta property="og:url" content="https://dinnyyy.github.io/" />
-  <meta property="og:image" content="https://dinnyyy.github.io/assets/img/harvest-ai.svg" />
+  <meta property="og:image" content="https://dinnyyy.github.io/assets/img/harvest-ai.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -316,7 +316,7 @@
         <div class="file-list">
           <!-- HarvestAI -->
           <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/harvest-ai.svg" alt="HarvestAI camera view with detection boxes over ripe and unripe strawberries" loading="lazy" /></div>
+            <div class="f-thumb"><img src="assets/img/harvest-ai.png" alt="HarvestAI object-detection model drawing bounding boxes around strawberries with confidence scores" loading="lazy" /></div>
             <div class="f-main">
               <div class="f-head">
                 <span class="f-name">HarvestAI: Strawberry-Picking Robot</span>
@@ -324,17 +324,19 @@
               </div>
               <p class="f-tags"><span>Python</span><span>Computer Vision</span><span>Object Detection</span><span>PyTorch</span><span>OpenCV</span><span>HPC</span><span>Robotics</span></p>
               <p class="f-desc">
-                A Monash DeepNeuron team project building a robotic arm that finds ripe
-                strawberries and picks them on its own. Strawberries are a hard target: every
-                berry ripens at its own pace, they bruise easily, and half of them sit behind a
-                leaf, which is why the job is still done by hand. I'm on the software team,
-                working on the perception module that everything downstream depends on:
-                curating and augmenting the strawberry image set, then training an
-                object-detection model to box individual berries in a live camera feed and
-                classify ripeness in real time, with training accelerated on HPC clusters.
-                Those detections become the 3D grasp point the arm actually reaches for, so a
-                miss is not just a bad number on a chart. Next up is segmentation, so the model
-                keeps working when a berry is half hidden by leaves.
+                A Monash DeepNeuron team project: a desktop-scale robotic arm with a camera that
+                finds ripe strawberries and picks them on its own. Strawberries are a hard
+                target for automation, every berry ripens at its own pace, bruises easily, and
+                half of them sit behind a leaf, which is why the job is still done by hand. The
+                MVP is three AI components working together: a computer-vision module that
+                detects and classifies each berry's ripeness from a live camera feed, a decision
+                layer that turns a detection into a 3D grasp point, and a motion-planning module
+                that moves the arm through it, with model training accelerated on HPC clusters.
+                Target bar for the MVP is around 80% detection accuracy, 3mm arm positioning
+                accuracy, and a full pick-and-place cycle in about 10 seconds. I'm on the
+                software team building the perception module: curating and augmenting the
+                strawberry image set, then training the object-detection model everything
+                downstream depends on.
               </p>
             </div>
           </article>
@@ -476,7 +478,7 @@
 
           <!-- Volatility Forecasting -->
           <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/volatility.png" alt="Volatility forecasting report" loading="lazy" /></div>
+            <div class="f-thumb"><img src="assets/img/volatility.png" alt="100-day ahead GARCH volatility forecast chart" loading="lazy" /></div>
             <div class="f-main">
               <div class="f-head">
                 <span class="f-name">Volatility Forecasting with GARCH</span>
