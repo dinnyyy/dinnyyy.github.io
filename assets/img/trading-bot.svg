@@ -1,46 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Trading bot — candlestick chart with buy and sell signals">
-  <defs>
-    <linearGradient id="tbg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b1220"/>
-      <stop offset="1" stop-color="#0e1b1a"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="500" fill="url(#tbg)"/>
-  <g stroke="#34d399" stroke-opacity="0.06">
-    <path d="M80 120H740M80 200H740M80 280H740M80 360H740"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Simulated S&amp;P 500 price line over shaded market regimes from a Hidden Markov Model, calm then volatile then calm, with buy and sell signals marked">
+  <rect width="800" height="500" fill="#131824"/>
+
+  <rect x="56" y="92" width="252.4" height="268" fill="#6187e7" fill-opacity="0.08"/><rect x="308.4" y="92" width="185.9" height="268" fill="#cd801c" fill-opacity="0.12"/><rect x="494.3" y="92" width="249.7" height="268" fill="#6187e7" fill-opacity="0.08"/>
+  <g stroke="#262d3d" stroke-width="1"><path d="M56 168H744M56 232H744M56 296H744"/></g>
+  <path d="M56 298.3L58.7 300.5L61.3 302.9L64 307.6L66.6 309.7L69.3 303.9L71.9 301.1L74.6 298.3L77.3 294.3L79.9 297.5L82.6 286.5L85.2 277.5L87.9 275.9L90.5 274.7L93.2 276.9L95.8 274.9L98.5 276.8L101.2 277.4L103.8 274.9L106.5 270.6L109.1 269.7L111.8 267.4L114.4 264.9L117.1 258.2L119.8 251.2L122.4 257.9L125.1 247.8L127.7 240.3L130.4 244.7L133 238.7L135.7 233.5L138.3 234.8L141 225.5L143.7 227.5L146.3 225.8L149 228.6L151.6 222.4L154.3 230.6L156.9 231.6L159.6 232.2L162.3 228.5L164.9 229.7L167.6 223.5L170.2 220.9L172.9 219.7L175.5 222.7L178.2 219.4L180.8 213.6L183.5 209.7L186.2 201.9L188.8 199.5L191.5 200.2L194.1 201.7L196.8 200L199.4 191.8L202.1 186L204.8 179.4L207.4 179.5L210.1 179.8L212.7 187L215.4 181L218 188.9L220.7 191L223.4 194.8L226 195.7L228.7 192.2L231.3 197.6L234 195L236.6 192.6L239.3 188.8L241.9 186.6L244.6 187.3L247.3 180L249.9 182.8L252.6 175.1L255.2 178.1L257.9 168.2L260.5 164.3L263.2 165.3L265.9 161.8L268.5 157.5L271.2 157.3L273.8 149.1L276.5 145L279.1 147.2L281.8 144.7L284.4 140.8L287.1 140.6L289.8 135L292.4 136.9L295.1 138.5L297.7 134.1L300.4 133.2L303 132.7L305.7 130.1L308.4 131.9L311 128.8L313.7 133.6L316.3 149.4L319 152.7L321.6 142.7L324.3 147.7L326.9 142.2L329.6 147.4L332.3 169.5L334.9 180.8L337.6 187.1L340.2 193.9L342.9 198.7L345.5 200.9L348.2 199.2L350.9 204.7L353.5 223.5L356.2 235.7L358.8 250.3L361.5 255L364.1 264.7L366.8 274.6L369.5 260.3L372.1 244L374.8 249.2L377.4 240.7L380.1 230.6L382.7 229.8L385.4 229L388 242.9L390.7 243.1L393.4 251.5L396 250.7L398.7 255.4L401.3 244.3L404 250.8L406.6 264.5L409.3 261.4L412 276.3L414.6 278L417.3 279.5L419.9 276.6L422.6 262.5L425.2 263.1L427.9 272.1L430.5 280.3L433.2 287L435.9 283.6L438.5 291.2L441.2 278.9L443.8 281.2L446.5 275.7L449.1 259L451.8 258L454.5 260.1L457.1 267.9L459.8 273.7L462.4 285.4L465.1 294.7L467.7 294.7L470.4 311.8L473.1 310.2L475.7 316.6L478.4 316.9L481 303.3L483.7 317.5L486.3 324.5L489 325.4L491.6 332.3L494.3 334.9L497 332L499.6 335.2L502.3 331.4L504.9 323.2L507.6 318L510.2 321.9L512.9 316.3L515.6 317.7L518.2 317.7L520.9 317.6L523.5 311L526.2 309.9L528.8 315.8L531.5 310.1L534.1 311.8L536.8 313.8L539.5 313.3L542.1 319.5L544.8 323.8L547.4 328L550.1 325.8L552.7 324.4L555.4 323.3L558.1 314.2L560.7 319.6L563.4 327.6L566 329.3L568.7 325.2L571.3 324.9L574 317.3L576.6 320.9L579.3 319.1L582 318.7L584.6 312.7L587.3 312.1L589.9 315.5L592.6 317.8L595.2 308.3L597.9 303.6L600.6 298.1L603.2 293.2L605.9 287.5L608.5 289.7L611.2 290.6L613.8 286.7L616.5 288.6L619.2 290.4L621.8 287.5L624.5 292.1L627.1 292.2L629.8 290.1L632.4 297.4L635.1 301.8L637.7 300.6L640.4 294.8L643.1 293.1L645.7 290.3L648.4 285.6L651 289.3L653.7 282.8L656.3 280L659 277L661.7 273.5L664.3 274.3L667 273.5L669.6 268.8L672.3 270L674.9 263.1L677.6 267L680.2 267.5L682.9 272.4L685.6 267.6L688.2 264.4L690.9 269.3L693.5 272L696.2 271.8L698.8 269.3L701.5 265L704.2 264.9L706.8 259.3L709.5 263L712.1 255.3L714.8 259L717.4 254.8L720.1 258.5L722.7 256.7L725.4 261.6L728.1 265.8L730.7 258.3L733.4 254.6L736 256.6L738.7 256.6L741.3 255.9L744 257.8" fill="none" stroke="#e6e9f0" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="56" y="374" width="251.4" height="10" rx="3" fill="#6187e7"/><rect x="309.4" y="374" width="182.9" height="10" rx="3" fill="#cd801c"/><rect x="495.3" y="374" width="246.7" height="10" rx="3" fill="#6187e7"/>
+  <path d="M66.6 325.7L74.6 339.7L58.6 339.7Z" fill="#e6e9f0" stroke="#131824" stroke-width="2" stroke-linejoin="round"/><path d="M502.3 347.4L510.3 361.4L494.3 361.4Z" fill="#e6e9f0" stroke="#131824" stroke-width="2" stroke-linejoin="round"/><path d="M308.4 112.8L316.4 98.8L300.4 98.8Z" fill="#e6e9f0" stroke="#131824" stroke-width="2" stroke-linejoin="round"/>
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="516.3" y="361.4" font-size="21" fill="#e6e9f0">Buy</text>
+    <text x="294.4" y="110.8" font-size="21" fill="#e6e9f0" text-anchor="end">Sell</text>
+    <rect x="56" y="46" width="16" height="16" rx="4" fill="#6187e7"/><text x="80" y="58" font-size="21" fill="#e6e9f0">Calm regime</text>
+    <rect x="242" y="46" width="16" height="16" rx="4" fill="#cd801c"/><text x="266" y="58" font-size="21" fill="#e6e9f0">Volatile regime</text>
+    <text x="56" y="436" font-size="21" fill="#8c95ab">Daily S&amp;P 500 with regimes from a Hidden Markov Model</text>
   </g>
-  <line x1="80" y1="90" x2="80" y2="360" stroke="#33405e" stroke-width="1.5"/>
-  <line x1="80" y1="360" x2="740" y2="360" stroke="#33405e" stroke-width="1.5"/>
-  <!-- candlesticks: green up, red down -->
-  <g stroke-width="2">
-    <!-- x, wick top, wick bottom, body top, body bottom -->
-    <g stroke="#34d399" fill="#34d399" fill-opacity="0.85">
-      <line x1="120" y1="250" x2="120" y2="310"/><rect x="112" y="265" width="16" height="35"/>
-      <line x1="170" y1="230" x2="170" y2="300"/><rect x="162" y="245" width="16" height="45"/>
-      <line x1="270" y1="200" x2="270" y2="270"/><rect x="262" y="210" width="16" height="45"/>
-      <line x1="420" y1="150" x2="420" y2="230"/><rect x="412" y="160" width="16" height="55"/>
-      <line x1="470" y1="130" x2="470" y2="200"/><rect x="462" y="140" width="16" height="45"/>
-      <line x1="620" y1="150" x2="620" y2="220"/><rect x="612" y="160" width="16" height="50"/>
-    </g>
-    <g stroke="#f87171" fill="#f87171" fill-opacity="0.85">
-      <line x1="220" y1="215" x2="220" y2="285"/><rect x="212" y="230" width="16" height="40"/>
-      <line x1="320" y1="185" x2="320" y2="255"/><rect x="312" y="200" width="16" height="40"/>
-      <line x1="370" y1="165" x2="370" y2="240"/><rect x="362" y="180" width="16" height="45"/>
-      <line x1="520" y1="145" x2="520" y2="225"/><rect x="512" y="160" width="16" height="50"/>
-      <line x1="570" y1="160" x2="570" y2="235"/><rect x="562" y="175" width="16" height="50"/>
-      <line x1="670" y1="185" x2="670" y2="255"/><rect x="662" y="200" width="16" height="45"/>
-    </g>
-  </g>
-  <!-- HMM regime line -->
-  <path d="M112 300 C200 290 240 250 320 235 S460 175 520 195 640 220 728 210"
-        fill="none" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.7" stroke-dasharray="6 4"/>
-  <!-- buy / sell markers -->
-  <g font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">
-    <path d="M120 335 l8 14 l-16 0 z" fill="#34d399"/>
-    <path d="M370 130 l8 -14 l-16 0 z" fill="#f87171"/>
-    <path d="M470 105 l8 -14 l-16 0 z" fill="#f87171"/>
-  </g>
-  <text x="80" y="82" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#9aa2b1">SPY · HMM regimes · RSI/ATR</text>
-  <text x="80" y="452" font-family="ui-monospace,Menlo,monospace" font-size="15" fill="#c7e6db" letter-spacing="1">Backtested · deployed on AWS Lambda</text>
-  <text x="80" y="474" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#34d399" letter-spacing="2" opacity="0.85">ALGORITHMIC TRADING BOT</text>
 </svg>

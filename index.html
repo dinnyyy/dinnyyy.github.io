@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joshua Dinn, Software Engineer &amp; Quant</title>
   <meta name="description" content="Joshua Dinn, a software engineering and econometrics student at Monash, working across data science, machine learning, and quantitative modelling. Projects, experience, and certifications." />
   <meta name="author" content="Joshua Dinn" />
+  <meta name="theme-color" content="#f8fafd" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -15,164 +16,169 @@
   <meta property="og:image" content="https://dinnyyy.github.io/assets/img/harvest-ai.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20261001" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-  <link rel="stylesheet" href="css/styles.css?v=20260820" />
+  <link rel="stylesheet" href="css/styles.css?v=20261001" />
 
   <!-- Set theme before paint to avoid a flash -->
   <script>
     (function () {
+      var dark = false;
       try {
         var t = localStorage.getItem("theme");
-        if (!t) {
-          t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) ? "light" : "dark";
-        }
-        document.documentElement.setAttribute("data-theme", t);
-      } catch (e) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
+        dark = t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      } catch (e) {}
+      document.documentElement.classList.toggle("dark", dark);
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute("content", dark ? "#131824" : "#f8fafd");
     })();
   </script>
 </head>
 <body id="top">
-  <a class="skip-link" href="#about">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ===================== Tab bar ===================== -->
-  <header class="tabbar">
-    <div class="tabbar-inner">
-      <button class="icon-btn explorer-toggle" type="button" aria-label="Toggle file explorer" aria-controls="file-tree" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Joshua Dinn, home">
-        <span class="monogram">JD</span>
-        <span class="brand-name">joshua-dinn<small>~/portfolio</small></span>
+        <span class="brand-mark" aria-hidden="true">JD</span>
+        <span class="brand-name">Joshua Dinn</span>
       </a>
 
-      <div class="tabbar-actions">
-        <a class="icon-btn nav-desktop-only" href="https://github.com/dinnyyy" target="_blank" rel="noopener" aria-label="GitHub">
+      <nav class="site-nav" id="site-nav" aria-label="Sections">
+        <ul>
+          <li><a class="spy-link" href="#about">About</a></li>
+          <li><a class="spy-link" href="#experience">Experience</a></li>
+          <li><a class="spy-link" href="#projects">Projects</a></li>
+          <li><a class="spy-link" href="#certifications">Certifications</a></li>
+          <li><a class="spy-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost btn-icon hide-sm" href="https://github.com/dinnyyy" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
         </a>
-        <a class="icon-btn nav-desktop-only" href="https://www.linkedin.com/in/josh-dinn/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a class="btn btn-ghost btn-icon hide-sm" href="https://www.linkedin.com/in/josh-dinn/" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33 0-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.73v20.53C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.73C24 .78 23.2 0 22.22 0Z"/></svg>
         </a>
-        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to light theme">
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
-          <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 1 0 9.8 9.8Z"/></svg>
+        <button class="btn btn-ghost btn-icon theme-toggle" type="button" aria-label="Switch to dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 1 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </button>
+        <button class="btn btn-outline btn-sm menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+          Menu
         </button>
       </div>
     </div>
   </header>
 
-  <div class="ide-body">
-    <div class="sidebar-scrim"></div>
-
-    <!-- ===================== Sidebar file tree ===================== -->
-    <aside class="sidebar" id="file-tree">
-      <p class="sidebar-label">portfolio</p>
-      <a class="file spy-link" href="#about">about.md</a>
-      <a class="file spy-link" href="#experience">experience.log</a>
-      <p class="sidebar-label folder">projects</p>
-      <a class="file nested spy-link" href="#projects">harvest-ai.py</a>
-      <a class="file nested spy-link" href="#projects">jackten.py</a>
-      <a class="file nested spy-link" href="#projects">ols-vs-mle.py</a>
-      <a class="file nested spy-link" href="#projects">stdout.tsx</a>
-      <a class="file nested spy-link" href="#projects">omni-ar.tsx</a>
-      <a class="file nested spy-link" href="#projects">maze-solver.py</a>
-      <a class="file nested spy-link" href="#projects">volatility-garch.py</a>
-      <a class="file nested spy-link" href="#projects">trading-bot.py</a>
-      <a class="file spy-link" href="#certifications">certifications.json</a>
-      <a class="file spy-link" href="#contact">contact.sh</a>
-    </aside>
-
-    <!-- ===================== Editor pane ===================== -->
-    <main class="editor">
-      <!-- Hero -->
-      <section class="hero-block">
-        <p class="who-line"><span class="prompt">$</span>whoami</p>
-        <h1 class="hero-name">Joshua <span class="accent">Dinn</span></h1>
-        <p class="hero-role">Software Engineer <span class="sep">/</span> Quant &amp; ML</p>
-        <p class="hero-status"><span class="dot"></span> Open to 2026/2027 internships · Melbourne, Australia</p>
-
-        <p class="who-line"><span class="prompt">$</span>cat about.txt</p>
+  <main id="main">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 class="hero-name" id="hero-title">Joshua Dinn</h1>
+        <p class="hero-role">Software Engineer <span class="sep" aria-hidden="true">/</span> Quant &amp; ML</p>
         <p class="hero-lead">
           Software Engineering &amp; Econometrics student at Monash University. I love
           solving problems with statistics, data science, and machine learning, and I
           like doing it with a team.
         </p>
-
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#projects">
-            View projects
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
-          <a class="btn btn-ghost" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">
+        <ul class="hero-facts">
+          <li><span class="status-dot" aria-hidden="true"></span>Open to 2026/2027 internships</li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            Melbourne, Australia
+          </li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-default btn-lg" href="#projects">View projects</a>
+          <a class="btn btn-outline btn-lg" href="#contact">Get in touch</a>
+          <a class="btn btn-outline btn-lg" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
             Resume
           </a>
         </div>
+      </div>
 
-        <div class="affiliations">
-          <p class="label">Affiliations</p>
-          <ul>
-            <li>Monash University</li>
-            <li>Monash DeepNeuron</li>
-            <li>Collingwood Football Club</li>
-            <li>NVIDIA Certified</li>
-          </ul>
-        </div>
-      </section>
+      <figure class="hero-photo">
+        <img src="assets/img/josh-collingwood.jpg" width="900" height="1200" fetchpriority="high" alt="Josh Dinn standing on the field at the Collingwood Football Club, the scoreboard behind him welcoming him as Data, Analytics and Technology Intern" />
+        <figcaption>Collingwood Football Club, Data, Analytics and Technology intern</figcaption>
+      </figure>
+    </section>
 
-      <!-- ===================== About ===================== -->
-      <section class="ed-block" id="about">
-        <p class="ed-head">about.md</p>
-        <h2 class="ed-title">Statistics, data science, and solving problems</h2>
+    <div class="container">
+      <div class="affiliations">
+        <p class="affiliations-label">Affiliations</p>
+        <ul>
+          <li>Monash University</li>
+          <li>Monash DeepNeuron</li>
+          <li>Collingwood Football Club</li>
+          <li>NVIDIA Certified</li>
+        </ul>
+      </div>
+    </div>
 
-        <div class="about-grid">
-          <div class="about-body reveal">
-            <p>
-              I've always loved numbers, the kind that make you want to sit down and
-              actually solve something. I'm doing a dual degree in
-              <strong>Software Engineering</strong> and <strong>Econometrics</strong> at
-              Monash, which puts me somewhere between <strong>data science</strong> and
-              systems work: statistics, machine learning, and problems that don't have a
-              clean answer yet.
-            </p>
-            <p>
-              At <strong>Monash DeepNeuron</strong> I built on-device AI memory systems and
-              taught C++, CUDA, and high-performance computing alongside NVIDIA and the
-              Pawsey Supercomputing Centre. On the data science and quant side I've built
-              trading systems, volatility models, and churn-prediction pipelines, most
-              recently interning in
-              <strong>Data, Analytics and Technology at the Collingwood Football Club</strong>.
-            </p>
-            <p>
-              Outside class I like picking something hard and working through it end to
-              end, usually with other people if I can. Right now that's three things.
-              <strong>HarvestAI</strong> at DeepNeuron, where I'm on the software team
-              teaching a robot arm to spot ripe strawberries. <strong>JackTen</strong>, a
-              poker bot built from the math up (equity and EV first, Bayesian range updates
-              now, deep learning for opponent modelling next). And a Monte Carlo study
-              putting <strong>OLS against maximum likelihood</strong> when the textbook
-              assumptions break. Different problems, same thing pulling me in: stats,
-              numbers, and figuring out what actually works.
-            </p>
-            <aside class="about-card">
-              <h3>Monash University</h3>
-              <p class="edu-meta">Melbourne · Mar 2023 – Oct 2027</p>
-              <p style="color:var(--text-muted);font-size:0.96rem;margin-bottom:18px;">
-                B. Engineering (Software Engineering) &amp; B. Commerce (Econometrics)
+    <!-- ===================== About ===================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container section-grid">
+        <p class="section-label" aria-hidden="true">About</p>
+        <div class="section-body">
+          <h2 class="section-title" id="about-title">Statistics, data science, and solving problems</h2>
+
+          <div class="about-layout">
+            <div class="prose">
+              <p>
+                I&rsquo;ve always loved numbers, the kind that make you want to sit down and
+                actually solve something. I&rsquo;m doing a dual degree in
+                <strong>Software Engineering</strong> and <strong>Econometrics</strong> at
+                Monash, which puts me somewhere between <strong>data science</strong> and
+                systems work: statistics, machine learning, and problems that don&rsquo;t have a
+                clean answer yet.
               </p>
-              <div class="stat-row">
-                <div class="stat"><div class="num">79.97</div><div class="cap">WAM · Distinction</div></div>
-                <div class="stat"><div class="num">100%</div><div class="cap">Unit score · FIT2107</div></div>
+              <p>
+                At <strong>Monash DeepNeuron</strong> I built on-device AI memory systems and
+                taught C++, CUDA, and high-performance computing alongside NVIDIA and the
+                Pawsey Supercomputing Centre. On the data science and quant side I&rsquo;ve built
+                trading systems, volatility models, and churn-prediction pipelines, most
+                recently interning in
+                <strong>Data, Analytics and Technology at the Collingwood Football Club</strong>.
+              </p>
+              <p>
+                Outside class I like picking something hard and working through it end to
+                end, usually with other people if I can. Right now that&rsquo;s three things.
+                <strong>HarvestAI</strong> at DeepNeuron, where I&rsquo;m on the software team
+                teaching a robot arm to spot ripe strawberries. <strong>JackTen</strong>, a
+                poker bot built from the math up (equity and EV first, Bayesian range updates
+                now, deep learning for opponent modelling next). And a Monte Carlo study
+                putting <strong>OLS against maximum likelihood</strong> when the textbook
+                assumptions break. Different problems, same thing pulling me in: stats,
+                numbers, and figuring out what actually works.
+              </p>
+            </div>
+
+            <aside class="card edu-card" aria-labelledby="edu-title">
+              <div class="card-header">
+                <h3 class="card-title" id="edu-title">Monash University</h3>
+                <p class="card-description"><span>Melbourne</span> <span>Mar 2023 &ndash; Oct 2027</span></p>
               </div>
-              <div class="ct-links" style="margin-top:18px;">
-                <a class="btn btn-ghost btn-sm" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">
+              <div class="card-content">
+                <p class="edu-degree">B. Engineering (Software Engineering) &amp; B. Commerce (Econometrics)</p>
+                <dl class="stats">
+                  <div class="stat">
+                    <dt>WAM, Distinction</dt>
+                    <dd>79.97</dd>
+                  </div>
+                  <div class="stat">
+                    <dt>Unit score, FIT2107</dt>
+                    <dd>100%</dd>
+                  </div>
+                </dl>
+              </div>
+              <div class="card-footer">
+                <a class="btn btn-outline btn-sm" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
                   Download resume
                 </a>
@@ -180,448 +186,454 @@
             </aside>
           </div>
 
-          <figure class="about-photo reveal">
-            <img src="assets/img/josh-collingwood.jpg" alt="Josh Dinn standing on the field at the Collingwood Football Club, the scoreboard behind him welcoming him as Data, Analytics and Technology Intern" loading="lazy" />
-            <figcaption>Collingwood Football Club · Data, Analytics and Technology intern</figcaption>
-          </figure>
-        </div>
-
-        <div class="skills-grid">
-          <div class="skill-card reveal">
-            <h4>Languages</h4>
-            <ul class="tags">
-              <li class="tag">C++</li><li class="tag">Python</li><li class="tag">TypeScript</li>
-              <li class="tag">JavaScript</li><li class="tag">Java</li><li class="tag">SQL</li>
-              <li class="tag">MATLAB</li><li class="tag">R</li>
-            </ul>
-          </div>
-          <div class="skill-card reveal">
-            <h4>Frameworks &amp; Tools</h4>
-            <ul class="tags">
-              <li class="tag">React</li><li class="tag">Node.js</li><li class="tag">AWS</li>
-              <li class="tag">MongoDB</li><li class="tag">Git</li><li class="tag">Linux</li>
-            </ul>
-          </div>
-          <div class="skill-card reveal">
-            <h4>Data Science &amp; Quant</h4>
-            <ul class="tags">
-              <li class="tag">pandas</li><li class="tag">NumPy</li><li class="tag">scikit-learn</li><li class="tag">PyTorch</li>
-              <li class="tag">OpenCV</li><li class="tag">XGBoost</li><li class="tag">SHAP</li><li class="tag">statsmodels</li>
-              <li class="tag">Snowflake</li><li class="tag">OxMetrics</li>
-            </ul>
+          <div class="skills">
+            <div class="skill-group">
+              <h3>Languages</h3>
+              <ul class="tags">
+                <li class="badge badge-secondary">C++</li><li class="badge badge-secondary">Python</li><li class="badge badge-secondary">TypeScript</li>
+                <li class="badge badge-secondary">JavaScript</li><li class="badge badge-secondary">Java</li><li class="badge badge-secondary">SQL</li>
+                <li class="badge badge-secondary">MATLAB</li><li class="badge badge-secondary">R</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Frameworks &amp; Tools</h3>
+              <ul class="tags">
+                <li class="badge badge-secondary">React</li><li class="badge badge-secondary">Node.js</li><li class="badge badge-secondary">AWS</li>
+                <li class="badge badge-secondary">MongoDB</li><li class="badge badge-secondary">Git</li><li class="badge badge-secondary">Linux</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Data Science &amp; Quant</h3>
+              <ul class="tags">
+                <li class="badge badge-secondary">pandas</li><li class="badge badge-secondary">NumPy</li><li class="badge badge-secondary">scikit-learn</li><li class="badge badge-secondary">PyTorch</li>
+                <li class="badge badge-secondary">OpenCV</li><li class="badge badge-secondary">XGBoost</li><li class="badge badge-secondary">SHAP</li><li class="badge badge-secondary">statsmodels</li>
+                <li class="badge badge-secondary">Snowflake</li><li class="badge badge-secondary">OxMetrics</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ===================== Experience ===================== -->
-      <section class="ed-block" id="experience">
-        <p class="ed-head">experience.log</p>
-        <h2 class="ed-title">Roles &amp; teams</h2>
-        <p class="ed-lead">A mix of engineering, applied AI, and quantitative analytics, across research teams, industry, and teaching.</p>
+    <!-- ===================== Experience ===================== -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container section-grid">
+        <p class="section-label" aria-hidden="true">Experience</p>
+        <div class="section-body">
+          <h2 class="section-title" id="experience-title">Roles &amp; teams</h2>
+          <p class="section-lead">A mix of engineering, applied AI, and quantitative analytics, across research teams, industry, and teaching.</p>
 
-        <div class="log-entries">
-          <article class="log-entry reveal">
-            <p class="log-head">
-              <span class="log-when">[Jul 2026 – Present]</span>
-              <span class="log-org">Independent Consulting</span>
-              <span class="log-role">Tech Consultant</span>
-            </p>
-            <ul>
-              <li>Working as an independent tech consultant for small and mid-sized businesses, helping them automate manual processes, cut operating costs, and modernise the internal software their teams rely on day to day.</li>
-              <li>Leaning increasingly on agentic AI tooling to move faster: prototyping automations, wiring up integrations, and shipping internal tools in days rather than weeks.</li>
-              <li>Run security reviews that close out live vulnerabilities and rebuild login and access controls, and automate previously manual data-ingestion processes (supplier feeds, stock updates, and the like) end to end.</li>
-              <li>Design SDLC and release processes for clients running everything straight against production: a staging environment with masked production data, deliberate database migrations in place of ad-hoc schema changes on boot, enforced merge and release gates, and monitoring across scheduled jobs and third-party integrations.</li>
-              <li>The role is broad by design: less about a fixed tech stack, more about sitting with a team, finding where their software and workflows are quietly costing them time or money, and shipping something that actually fixes it.</li>
-            </ul>
-          </article>
+          <ol class="timeline">
+            <li class="job is-current">
+              <p class="job-when">Jul 2026 &ndash; Present</p>
+              <div class="job-main">
+                <h3 class="job-org">Independent Consulting</h3>
+                <p class="job-role">Tech Consultant</p>
+                <ul class="job-points">
+                  <li>Working as an independent tech consultant for small and mid-sized businesses, helping them automate manual processes, cut operating costs, and modernise the internal software their teams rely on day to day.</li>
+                  <li>Leaning increasingly on agentic AI tooling to move faster: prototyping automations, wiring up integrations, and shipping internal tools in days rather than weeks.</li>
+                  <li>Run security reviews that close out live vulnerabilities and rebuild login and access controls, and automate previously manual data-ingestion processes (supplier feeds, stock updates, and the like) end to end.</li>
+                  <li>Design SDLC and release processes for clients running everything straight against production: a staging environment with masked production data, deliberate database migrations in place of ad-hoc schema changes on boot, enforced merge and release gates, and monitoring across scheduled jobs and third-party integrations.</li>
+                  <li>The role is broad by design: less about a fixed tech stack, more about sitting with a team, finding where their software and workflows are quietly costing them time or money, and shipping something that actually fixes it.</li>
+                </ul>
+              </div>
+            </li>
 
-          <article class="log-entry reveal">
-            <p class="log-head">
-              <span class="log-when">[Sep 2025 – Present]</span>
-              <span class="log-org">Monash DeepNeuron</span>
-              <span class="log-role">Optimised Computing Member</span>
-            </p>
-            <ul>
-              <li>On the software team for HarvestAI, a robotic arm that picks strawberries autonomously. I work on the computer-vision perception module: curating and augmenting the training data, then training an object-detection model to find individual strawberries in a live camera feed and classify how ripe they are, with training runs accelerated on HPC clusters.</li>
-              <li>Built Omni AR, a mobile augmented-reality assistant for smart glasses with a photographic-memory feature: Gemini 2.5 Flash handled fast vision and embeddings, a local vector database gave semantic recall, and Whisper and TTS streamed over SSE for low latency.</li>
-              <li>Teaching Assistant for an 8-week C++ and accelerated-computing workshop on GPU programming, CUDA, and HPC, run with NVIDIA, the Pawsey Supercomputing Centre, and NCI.</li>
-              <li>NVIDIA CUDA certified through the program.</li>
-            </ul>
-          </article>
+            <li class="job is-current">
+              <p class="job-when">Sep 2025 &ndash; Present</p>
+              <div class="job-main">
+                <h3 class="job-org">Monash DeepNeuron</h3>
+                <p class="job-role">Optimised Computing Member</p>
+                <ul class="job-points">
+                  <li>On the software team for HarvestAI, a robotic arm that picks strawberries autonomously. I work on the computer-vision perception module: curating and augmenting the training data, then training an object-detection model to find individual strawberries in a live camera feed and classify how ripe they are, with training runs accelerated on HPC clusters.</li>
+                  <li>Built Omni AR, a mobile augmented-reality assistant for smart glasses with a photographic-memory feature: Gemini 2.5 Flash handled fast vision and embeddings, a local vector database gave semantic recall, and Whisper and TTS streamed over SSE for low latency.</li>
+                  <li>Teaching Assistant for an 8-week C++ and accelerated-computing workshop on GPU programming, CUDA, and HPC, run with NVIDIA, the Pawsey Supercomputing Centre, and NCI.</li>
+                  <li>NVIDIA CUDA certified through the program.</li>
+                </ul>
+              </div>
+            </li>
 
-          <article class="log-entry reveal">
-            <p class="log-head">
-              <span class="log-when">[Jul 2026 – Present]</span>
-              <span class="log-org">Monash eSolutions</span>
-              <span class="log-role">AI Fitness Trainer</span>
-            </p>
-            <ul>
-              <li>Run in-person sessions teaching students and staff how to use AI effectively, ethically, and in everyday study and work.</li>
-              <li>Helped deliver a university webinar on AI to an audience of 200+ attendees.</li>
-            </ul>
-          </article>
+            <li class="job is-current">
+              <p class="job-when">Jul 2026 &ndash; Present</p>
+              <div class="job-main">
+                <h3 class="job-org">Monash eSolutions</h3>
+                <p class="job-role">AI Fitness Trainer</p>
+                <ul class="job-points">
+                  <li>Run in-person sessions teaching students and staff how to use AI effectively, ethically, and in everyday study and work.</li>
+                  <li>Helped deliver a university webinar on AI to an audience of 200+ attendees.</li>
+                </ul>
+              </div>
+            </li>
 
-          <article class="log-entry reveal">
-            <p class="log-head">
-              <span class="log-when">[Mar 2026 – Jun 2026]</span>
-              <span class="log-org">Collingwood Football Club</span>
-              <span class="log-role">Data, Analytics and Technology Intern</span>
-            </p>
-            <ul>
-              <li>Built an XGBoost churn-prediction model that flags at-risk members for the commercial team, engineering the feature pipelines from historical transaction and engagement data.</li>
-              <li>Created an interactive dashboard breaking down churn drivers with SHAP feature importance for commercial stakeholders.</li>
-              <li>Designed a repository-synchronisation workflow between the club's web and mobile codebases to streamline deployments.</li>
-            </ul>
-          </article>
+            <li class="job">
+              <p class="job-when">Mar 2026 &ndash; Jun 2026</p>
+              <div class="job-main">
+                <h3 class="job-org">Collingwood Football Club</h3>
+                <p class="job-role">Data, Analytics and Technology Intern</p>
+                <ul class="job-points">
+                  <li>Built an XGBoost churn-prediction model that flags at-risk members for the commercial team, engineering the feature pipelines from historical transaction and engagement data.</li>
+                  <li>Created an interactive dashboard breaking down churn drivers with SHAP feature importance for commercial stakeholders.</li>
+                  <li>Designed a repository-synchronisation workflow between the club&rsquo;s web and mobile codebases to streamline deployments.</li>
+                </ul>
+              </div>
+            </li>
 
-          <article class="log-entry reveal">
-            <p class="log-head">
-              <span class="log-when">[Jun 2024 – Dec 2025]</span>
-              <span class="log-org">Outlier AI</span>
-              <span class="log-role">AI Trainer · Mathematics</span>
-            </p>
-            <ul>
-              <li>Evaluated AI model outputs on advanced mathematics, checking logical correctness and technical clarity in LaTeX.</li>
-              <li>Wrote structured feedback on reasoning and formatting that fed back into improving model output quality.</li>
-            </ul>
-          </article>
+            <li class="job">
+              <p class="job-when">Jun 2024 &ndash; Dec 2025</p>
+              <div class="job-main">
+                <h3 class="job-org">Outlier AI</h3>
+                <p class="job-role">AI Trainer, Mathematics</p>
+                <ul class="job-points">
+                  <li>Evaluated AI model outputs on advanced mathematics, checking logical correctness and technical clarity in LaTeX.</li>
+                  <li>Wrote structured feedback on reasoning and formatting that fed back into improving model output quality.</li>
+                </ul>
+              </div>
+            </li>
 
-          <article class="log-entry reveal">
-            <p class="log-head">
-              <span class="log-when">[Feb 2023 – Jul 2026]</span>
-              <span class="log-org">TMJ Tutoring</span>
-              <span class="log-role">Mathematics Tutor</span>
-            </p>
-            <ul>
-              <li>Tutored high-school students in mathematics, focusing on exam preparation and problem-solving.</li>
-            </ul>
-          </article>
+            <li class="job">
+              <p class="job-when">Feb 2023 &ndash; Jul 2026</p>
+              <div class="job-main">
+                <h3 class="job-org">TMJ Tutoring</h3>
+                <p class="job-role">Mathematics Tutor</p>
+                <ul class="job-points">
+                  <li>Tutored high-school students in mathematics, focusing on exam preparation and problem-solving.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ===================== Projects ===================== -->
-      <section class="ed-block" id="projects">
-        <div class="projects-head">
-          <div>
-            <p class="ed-head">projects/</p>
-            <h2 class="ed-title">Selected work</h2>
+    <!-- ===================== Projects ===================== -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container section-grid">
+        <p class="section-label" aria-hidden="true">Projects</p>
+        <div class="section-body">
+          <div class="section-head">
+            <h2 class="section-title" id="projects-title">Selected work</h2>
+            <a class="btn btn-outline btn-sm" href="https://github.com/dinnyyy" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+              All repositories
+            </a>
           </div>
-          <a class="btn btn-ghost btn-sm reveal" href="https://github.com/dinnyyy" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
-            All repositories
-          </a>
+
+          <h3 class="group-title">Currently building</h3>
+          <div class="feature-list">
+            <!-- HarvestAI -->
+            <article class="project project-feature">
+              <div class="project-media"><img src="assets/img/harvest-ai.png" width="423" height="345" loading="lazy" alt="HarvestAI object-detection model drawing bounding boxes around strawberries with confidence scores" /></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h4 class="project-title">HarvestAI: Strawberry-Picking Robot</h4>
+                  <span class="badge badge-status is-wip">WIP</span>
+                </div>
+                <p class="project-desc">
+                  A Monash DeepNeuron team project: a desktop-scale robotic arm with a camera that
+                  finds ripe strawberries and picks them on its own. Strawberries are a hard
+                  target for automation, every berry ripens at its own pace, bruises easily, and
+                  half of them sit behind a leaf, which is why the job is still done by hand. The
+                  MVP is three AI components working together: a computer-vision module that
+                  detects and classifies each berry&rsquo;s ripeness from a live camera feed, a decision
+                  layer that turns a detection into a 3D grasp point, and a motion-planning module
+                  that moves the arm through it, with model training accelerated on HPC clusters.
+                  Target bar for the MVP is around 80% detection accuracy, 3mm arm positioning
+                  accuracy, and a full pick-and-place cycle in about 10 seconds. I&rsquo;m on the
+                  software team building the perception module: curating and augmenting the
+                  strawberry image set, then training the object-detection model everything
+                  downstream depends on.
+                </p>
+                <ul class="tags" aria-label="Tools">
+                  <li class="badge badge-outline">Python</li><li class="badge badge-outline">Computer Vision</li><li class="badge badge-outline">Object Detection</li><li class="badge badge-outline">PyTorch</li><li class="badge badge-outline">OpenCV</li><li class="badge badge-outline">HPC</li><li class="badge badge-outline">Robotics</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- JackTen -->
+            <article class="project project-feature">
+              <div class="project-media"><img src="assets/img/jackten.svg?v=20261001" width="800" height="500" loading="lazy" alt="JackTen: a jack and ten of hearts beside a starting-hand range grid with the jack-ten suited cell highlighted" /></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h4 class="project-title">JackTen: NLHE Poker Bot</h4>
+                  <span class="badge badge-status is-wip">WIP</span>
+                </div>
+                <p class="project-desc">
+                  A no-limit hold&rsquo;em strategy engine, built from the math up rather than from a
+                  library. The roadmap runs hand evaluation and equity first, then the EV, pot
+                  odds, and minimum-defense-frequency formulas that drive every decision, then
+                  Bayesian range updates and opponent stats (VPIP, PFR, 3-bet%) for exploitative
+                  play. I&rsquo;m currently through the equity and EV layers. Next up is deep learning
+                  for opponent behaviour: sequence models (LSTM and, if the data supports it,
+                  transformer-based) trained on hand-history action sequences to predict
+                  opponent tendencies and ranges, feeding into the same Bayesian updates rather
+                  than replacing them.
+                </p>
+                <ul class="tags" aria-label="Tools">
+                  <li class="badge badge-outline">Python</li><li class="badge badge-outline">Game Theory</li><li class="badge badge-outline">Bayesian Inference</li><li class="badge badge-outline">Equity / EV</li><li class="badge badge-outline">LSTM</li><li class="badge badge-outline">Deep Learning</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- OLS vs MLE -->
+            <article class="project project-feature">
+              <div class="project-media"><img src="assets/img/ols-vs-mle.svg?v=20261001" width="800" height="500" loading="lazy" alt="Sampling distributions of an OLS and a maximum likelihood estimator around the true parameter, with their 95% interval coverage" /></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h4 class="project-title">OLS vs MLE: A Monte Carlo Study</h4>
+                  <span class="badge badge-status is-wip">WIP</span>
+                </div>
+                <p class="project-desc">
+                  OLS is the default regression tool, but it is only the best one when a specific
+                  set of textbook assumptions holds, and real data breaks them constantly: fat
+                  tails, non-constant variance, outcomes that are counts or yes/no rather than
+                  continuous. This project stops asserting how much that costs you and measures
+                  it. I simulate thousands of datasets where I know the true parameter, fit both
+                  OLS and the correctly specified maximum likelihood alternative to each, and
+                  track bias, efficiency, and whether a 95% confidence interval actually contains
+                  the truth 95% of the time. Everything also gets held against the Cram&eacute;r-Rao
+                  lower bound, the hard limit on how precise any unbiased estimator can be: the
+                  simple Poisson rate hits that bound exactly at any sample size, the regression
+                  MLE only closes on it as the sample grows, and OLS provably sits above it once
+                  its assumptions break. Both derivations are worked by hand, with the Poisson
+                  regression MLE solved by Newton-Raphson rather than handed to a library. It
+                  ships as a written report, not just a repo.
+                </p>
+                <ul class="tags" aria-label="Tools">
+                  <li class="badge badge-outline">Python</li><li class="badge badge-outline">Monte Carlo</li><li class="badge badge-outline">Econometrics</li><li class="badge badge-outline">MLE</li><li class="badge badge-outline">Cram&eacute;r-Rao Bound</li><li class="badge badge-outline">NumPy / SciPy</li><li class="badge badge-outline">statsmodels</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <h3 class="group-title">Past work</h3>
+          <div class="project-grid">
+            <!-- StdOut -->
+            <article class="project">
+              <div class="project-media"><img src="assets/img/stdout.png" width="396" height="259" loading="lazy" alt="StdOut project" /></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h4 class="project-title">StdOut: AI Interview Simulator</h4>
+                  <span class="badge badge-status is-live">Live</span>
+                </div>
+                <p class="project-desc">
+                  A real-time platform that runs a full mock technical interview end to end: live
+                  speech-to-text, a GPT-4o Realtime AI interviewer, and an in-browser Python editor
+                  with instant execution. Each submission is auto-graded against test cases and scored
+                  by an AI reviewer on correctness, communication, and approach, with a diff timeline
+                  replaying every change. I engineered the low-latency pipeline that streams
+                  transcription, conversation, and code concurrently so the session never blocks, then
+                  shipped it with a 3-person hackathon team on a Vercel, Render, and MongoDB Atlas stack.
+                </p>
+                <ul class="tags" aria-label="Tools">
+                  <li class="badge badge-outline">React 19</li><li class="badge badge-outline">Node/Express</li><li class="badge badge-outline">MongoDB</li><li class="badge badge-outline">WebSockets</li><li class="badge badge-outline">GPT-4o Realtime</li><li class="badge badge-outline">CodeMirror</li>
+                </ul>
+                <div class="project-links">
+                  <a class="btn btn-default btn-sm" href="https://std-out.vercel.app/?_vercel_share=ahPvvbRWMYQN6cXksRwdRKjogNyNYNm7" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                    Live demo
+                  </a>
+                  <a class="btn btn-outline btn-sm" href="https://github.com/jeremyylimmm/StdOut" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                    Source
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Omni AR -->
+            <article class="project">
+              <div class="project-media"><img src="assets/img/omni-ar.webp" width="1120" height="700" loading="lazy" alt="Omni AR interface" /></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h4 class="project-title">Omni AR: Photographic Memory</h4>
+                  <span class="badge badge-status">Shipped</span>
+                </div>
+                <p class="project-desc">
+                  A mobile augmented-reality assistant for &ldquo;smart glasses&rdquo; with a photographic-memory
+                  feature. Walk around with your phone&rsquo;s camera and mic, ask questions about your
+                  surroundings, and recall saved &ldquo;memories&rdquo; later just by asking. Gemini 2.5 Flash
+                  handles fast vision and embeddings; a local vector database gives semantic recall,
+                  with Whisper and TTS streamed over SSE for low latency.
+                </p>
+                <ul class="tags" aria-label="Tools">
+                  <li class="badge badge-outline">React</li><li class="badge badge-outline">Flask</li><li class="badge badge-outline">Gemini 2.5</li><li class="badge badge-outline">Vector DB</li><li class="badge badge-outline">Whisper</li><li class="badge badge-outline">SSE</li>
+                </ul>
+                <div class="project-links">
+                  <a class="btn btn-outline btn-sm" href="https://github.com/AaronEliasZachariah/MDN-AR" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                    Source
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Maze Solver -->
+            <article class="project" id="maze-solver">
+              <div class="project-media"><img src="assets/img/maze.webp" width="1333" height="833" loading="lazy" alt="Maze solver visualiser" /></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h4 class="project-title">Maze Solver &amp; Algorithm Visualiser</h4>
+                  <span class="badge badge-status">100%</span>
+                </div>
+                <p class="project-desc">
+                  A Python pathfinding platform with three modes (play, watch, and race) visualising
+                  seven algorithms (A*, BFS, DFS, Greedy, wall-follower, and random walks) across
+                  procedurally generated mazes. Backed by a serious testing framework: property-based
+                  testing with Hypothesis, visual snapshot tests, and performance benchmarking over
+                  125,000+ simulated runs.
+                </p>
+                <ul class="tags" aria-label="Tools">
+                  <li class="badge badge-outline">Python</li><li class="badge badge-outline">pygame</li><li class="badge badge-outline">Hypothesis</li><li class="badge badge-outline">pytest</li><li class="badge badge-outline">NumPy</li><li class="badge badge-outline">matplotlib</li>
+                </ul>
+                <div class="project-links">
+                  <a class="btn btn-outline btn-sm" href="https://github.com/dinnyyy/Interactive-Maze-Solver-Algorithm-Visualizer" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                    Source
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Volatility Forecasting -->
+            <article class="project">
+              <div class="project-media"><img src="assets/img/volatility.svg?v=20261001" width="800" height="500" loading="lazy" alt="Daily returns with a fitted GARCH(1,1) volatility band and a 100-day-ahead volatility forecast" /></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h4 class="project-title">Volatility Forecasting with GARCH</h4>
+                  <span class="badge badge-status">Report</span>
+                </div>
+                <p class="project-desc">
+                  A study applying a GARCH(1,1) model to a decade of S&amp;P 500 daily log returns to
+                  capture time-varying volatility and clustering. Fitted by maximum likelihood and
+                  validated with Ljung-Box and ARCH-LM diagnostics, then used to forecast conditional
+                  variance 100 days ahead, automating the full data, evaluation, and reporting pipeline
+                  in Python.
+                </p>
+                <ul class="tags" aria-label="Tools">
+                  <li class="badge badge-outline">Python</li><li class="badge badge-outline">GARCH(1,1)</li><li class="badge badge-outline">MLE</li><li class="badge badge-outline">statsmodels</li><li class="badge badge-outline">Time series</li>
+                </ul>
+                <div class="project-links">
+                  <a class="btn btn-default btn-sm" href="assets/projects/volatility-forecasting-report.pdf" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+                    Read the report
+                  </a>
+                  <a class="btn btn-outline btn-sm" href="https://github.com/dinnyyy/volatility-forecasting-garch" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                    Source
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Trading Bot -->
+            <article class="project">
+              <div class="project-media"><img src="assets/img/trading-bot.svg?v=20261001" width="800" height="500" loading="lazy" alt="Price chart shaded by market regime, with buy and sell signals" /></div>
+              <div class="project-body">
+                <div class="project-head">
+                  <h4 class="project-title">Algorithmic Trading Bot</h4>
+                  <span class="badge badge-status">Deployed</span>
+                </div>
+                <p class="project-desc">
+                  My first end-to-end live trading bot, built to learn the full pipeline. It uses a
+                  Hidden Markov Model to classify S&amp;P 500 market regimes from daily data, combines
+                  RSI, ATR, and volatility signals into position sizing and trade logic, backtests the
+                  strategy, and deploys to a Linux VPS via AWS Lambda and the Alpaca API for automated
+                  paper trading.
+                </p>
+                <ul class="tags" aria-label="Tools">
+                  <li class="badge badge-outline">Python</li><li class="badge badge-outline">HMM</li><li class="badge badge-outline">AWS Lambda</li><li class="badge badge-outline">Alpaca API</li><li class="badge badge-outline">Backtesting</li>
+                </ul>
+                <div class="project-links">
+                  <a class="btn btn-outline btn-sm" href="https://github.com/dinnyyy/first_trading_bot" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+                    Source
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <p class="dir-comment">currently building</p>
-        <div class="file-list">
-          <!-- HarvestAI -->
-          <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/harvest-ai.png" alt="HarvestAI object-detection model drawing bounding boxes around strawberries with confidence scores" loading="lazy" /></div>
-            <div class="f-main">
-              <div class="f-head">
-                <span class="f-name">HarvestAI: Strawberry-Picking Robot</span>
-                <span class="f-status wip">WIP</span>
-              </div>
-              <p class="f-tags"><span>Python</span><span>Computer Vision</span><span>Object Detection</span><span>PyTorch</span><span>OpenCV</span><span>HPC</span><span>Robotics</span></p>
-              <p class="f-desc">
-                A Monash DeepNeuron team project: a desktop-scale robotic arm with a camera that
-                finds ripe strawberries and picks them on its own. Strawberries are a hard
-                target for automation, every berry ripens at its own pace, bruises easily, and
-                half of them sit behind a leaf, which is why the job is still done by hand. The
-                MVP is three AI components working together: a computer-vision module that
-                detects and classifies each berry's ripeness from a live camera feed, a decision
-                layer that turns a detection into a 3D grasp point, and a motion-planning module
-                that moves the arm through it, with model training accelerated on HPC clusters.
-                Target bar for the MVP is around 80% detection accuracy, 3mm arm positioning
-                accuracy, and a full pick-and-place cycle in about 10 seconds. I'm on the
-                software team building the perception module: curating and augmenting the
-                strawberry image set, then training the object-detection model everything
-                downstream depends on.
-              </p>
-            </div>
-          </article>
+    <!-- ===================== Certifications ===================== -->
+    <section class="section" id="certifications" aria-labelledby="certifications-title">
+      <div class="container section-grid">
+        <p class="section-label" aria-hidden="true">Certifications</p>
+        <div class="section-body">
+          <h2 class="section-title" id="certifications-title">Certifications &amp; credentials</h2>
+          <p class="section-lead">Verified qualifications and academic distinctions.</p>
 
-          <!-- JackTen -->
-          <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/jackten.svg" alt="JackTen poker range grid" loading="lazy" /></div>
-            <div class="f-main">
-              <div class="f-head">
-                <span class="f-name">JackTen: NLHE Poker Bot</span>
-                <span class="f-status wip">WIP</span>
+          <div class="certs">
+            <article class="cert-feature">
+              <div class="cert-media"><img src="assets/certs/nvidia-cuda-cert.png" width="780" height="658" loading="lazy" alt="NVIDIA certificate of competency for Joshua Dinn" /></div>
+              <div class="cert-body">
+                <p class="cert-issuer">NVIDIA</p>
+                <h3 class="cert-title">Fundamentals of Accelerated Computing with Modern CUDA C++</h3>
+                <p class="cert-meta">Certificate of Competency, issued April 2026</p>
+                <div class="project-links">
+                  <a class="btn btn-default btn-sm" href="https://learn.nvidia.com/certificates?id=7DMbTBibRmGC9NkTErVGbw" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                    Verify certificate
+                  </a>
+                  <a class="btn btn-outline btn-sm" href="assets/certs/NVIDIA_CUDA_Fundamentals.pdf" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"/><path d="M14 2v6h6"/></svg>
+                    Download PDF
+                  </a>
+                </div>
               </div>
-              <p class="f-tags"><span>Python</span><span>Game Theory</span><span>Bayesian Inference</span><span>Equity / EV</span><span>LSTM</span><span>Deep Learning</span></p>
-              <p class="f-desc">
-                A no-limit hold'em strategy engine, built from the math up rather than from a
-                library. The roadmap runs hand evaluation and equity first, then the EV, pot
-                odds, and minimum-defense-frequency formulas that drive every decision, then
-                Bayesian range updates and opponent stats (VPIP, PFR, 3-bet%) for exploitative
-                play. I'm currently through the equity and EV layers. Next up is deep learning
-                for opponent behaviour: sequence models (LSTM and, if the data supports it,
-                transformer-based) trained on hand-history action sequences to predict
-                opponent tendencies and ranges, feeding into the same Bayesian updates rather
-                than replacing them.
-              </p>
-            </div>
-          </article>
+            </article>
 
-          <!-- OLS vs MLE -->
-          <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/ols-vs-mle.svg" alt="Sampling distributions of an OLS and a maximum likelihood estimator around the true parameter" loading="lazy" /></div>
-            <div class="f-main">
-              <div class="f-head">
-                <span class="f-name">OLS vs MLE: A Monte Carlo Study</span>
-                <span class="f-status wip">WIP</span>
-              </div>
-              <p class="f-tags"><span>Python</span><span>Monte Carlo</span><span>Econometrics</span><span>MLE</span><span>Cram&eacute;r-Rao Bound</span><span>NumPy / SciPy</span><span>statsmodels</span></p>
-              <p class="f-desc">
-                OLS is the default regression tool, but it is only the best one when a specific
-                set of textbook assumptions holds, and real data breaks them constantly: fat
-                tails, non-constant variance, outcomes that are counts or yes/no rather than
-                continuous. This project stops asserting how much that costs you and measures
-                it. I simulate thousands of datasets where I know the true parameter, fit both
-                OLS and the correctly specified maximum likelihood alternative to each, and
-                track bias, efficiency, and whether a 95% confidence interval actually contains
-                the truth 95% of the time. Everything also gets held against the Cram&eacute;r-Rao
-                lower bound, the hard limit on how precise any unbiased estimator can be: the
-                simple Poisson rate hits that bound exactly at any sample size, the regression
-                MLE only closes on it as the sample grows, and OLS provably sits above it once
-                its assumptions break. Both derivations are worked by hand, with the Poisson
-                regression MLE solved by Newton-Raphson rather than handed to a library. It
-                ships as a written report, not just a repo.
-              </p>
+            <div class="cert-stack">
+              <article class="cert">
+                <p class="cert-issuer">Monash University</p>
+                <h3 class="cert-title">Distinction: Software Engineering &amp; Econometrics</h3>
+                <p class="cert-meta">Weighted average mark: 79.97 (Distinction), 2023 &ndash; present</p>
+                <a class="text-link" href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">View resume</a>
+              </article>
+
+              <article class="cert">
+                <p class="cert-issuer">Monash University, Unit FIT2107</p>
+                <h3 class="cert-title">Software Quality &amp; Testing</h3>
+                <p class="cert-meta">Scored 100% overall in the unit, which included the major project, the Maze Solver</p>
+                <a class="text-link" href="#maze-solver">See the project</a>
+              </article>
             </div>
-          </article>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <p class="dir-comment">past work</p>
-        <div class="file-list">
-          <!-- StdOut -->
-          <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/stdout.png" alt="StdOut project" loading="lazy" /></div>
-            <div class="f-main">
-              <div class="f-head">
-                <span class="f-name">StdOut: AI Interview Simulator</span>
-                <span class="f-status live">LIVE</span>
-              </div>
-              <p class="f-tags"><span>React 19</span><span>Node/Express</span><span>MongoDB</span><span>WebSockets</span><span>GPT-4o Realtime</span><span>CodeMirror</span></p>
-              <p class="f-desc">
-                A real-time platform that runs a full mock technical interview end to end: live
-                speech-to-text, a GPT-4o Realtime AI interviewer, and an in-browser Python editor
-                with instant execution. Each submission is auto-graded against test cases and scored
-                by an AI reviewer on correctness, communication, and approach, with a diff timeline
-                replaying every change. I engineered the low-latency pipeline that streams
-                transcription, conversation, and code concurrently so the session never blocks, then
-                shipped it with a 3-person hackathon team on a Vercel, Render, and MongoDB Atlas stack.
-              </p>
-              <div class="f-links">
-                <a href="https://std-out.vercel.app/?_vercel_share=ahPvvbRWMYQN6cXksRwdRKjogNyNYNm7" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
-                  Live demo
-                </a>
-                <a href="https://github.com/jeremyylimmm/StdOut" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
-                  Source
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Omni AR -->
-          <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/omni-ar.webp" alt="Omni AR interface" loading="lazy" /></div>
-            <div class="f-main">
-              <div class="f-head">
-                <span class="f-name">Omni AR: Photographic Memory</span>
-                <span class="f-status shipped">SHIPPED</span>
-              </div>
-              <p class="f-tags"><span>React</span><span>Flask</span><span>Gemini 2.5</span><span>Vector DB</span><span>Whisper</span><span>SSE</span></p>
-              <p class="f-desc">
-                A mobile augmented-reality assistant for "smart glasses" with a photographic-memory
-                feature. Walk around with your phone's camera and mic, ask questions about your
-                surroundings, and recall saved "memories" later just by asking. Gemini 2.5 Flash
-                handles fast vision and embeddings; a local vector database gives semantic recall,
-                with Whisper and TTS streamed over SSE for low latency.
-              </p>
-              <div class="f-links">
-                <a href="https://github.com/AaronEliasZachariah/MDN-AR" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
-                  Source
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Maze Solver -->
-          <article class="file-row reveal" id="maze-solver">
-            <div class="f-thumb"><img src="assets/img/maze.webp" alt="Maze solver visualiser" loading="lazy" /></div>
-            <div class="f-main">
-              <div class="f-head">
-                <span class="f-name">Maze Solver &amp; Algorithm Visualiser</span>
-                <span class="f-status shipped">100%</span>
-              </div>
-              <p class="f-tags"><span>Python</span><span>pygame</span><span>Hypothesis</span><span>pytest</span><span>NumPy</span><span>matplotlib</span></p>
-              <p class="f-desc">
-                A Python pathfinding platform with three modes (play, watch, and race) visualising
-                seven algorithms (A*, BFS, DFS, Greedy, wall-follower, and random walks) across
-                procedurally generated mazes. Backed by a serious testing framework: property-based
-                testing with Hypothesis, visual snapshot tests, and performance benchmarking over
-                125,000+ simulated runs.
-              </p>
-              <div class="f-links">
-                <a href="https://github.com/dinnyyy/Interactive-Maze-Solver-Algorithm-Visualizer" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
-                  Source
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Volatility Forecasting -->
-          <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/volatility.png" alt="100-day ahead GARCH volatility forecast chart" loading="lazy" /></div>
-            <div class="f-main">
-              <div class="f-head">
-                <span class="f-name">Volatility Forecasting with GARCH</span>
-                <span class="f-status shipped">REPORT</span>
-              </div>
-              <p class="f-tags"><span>Python</span><span>GARCH(1,1)</span><span>MLE</span><span>statsmodels</span><span>Time series</span></p>
-              <p class="f-desc">
-                A study applying a GARCH(1,1) model to a decade of S&amp;P 500 daily log returns to
-                capture time-varying volatility and clustering. Fitted by maximum likelihood and
-                validated with Ljung-Box and ARCH-LM diagnostics, then used to forecast conditional
-                variance 100 days ahead, automating the full data, evaluation, and reporting pipeline
-                in Python.
-              </p>
-              <div class="f-links">
-                <a href="assets/projects/volatility-forecasting-report.pdf" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
-                  Read the report
-                </a>
-                <a href="https://github.com/dinnyyy/volatility-forecasting-garch" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
-                  Source
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Trading Bot -->
-          <article class="file-row reveal">
-            <div class="f-thumb"><img src="assets/img/trading-bot.svg" alt="Trading bot chart" loading="lazy" /></div>
-            <div class="f-main">
-              <div class="f-head">
-                <span class="f-name">Algorithmic Trading Bot</span>
-                <span class="f-status shipped">DEPLOYED</span>
-              </div>
-              <p class="f-tags"><span>Python</span><span>HMM</span><span>AWS Lambda</span><span>Alpaca API</span><span>Backtesting</span></p>
-              <p class="f-desc">
-                My first end-to-end live trading bot, built to learn the full pipeline. It uses a
-                Hidden Markov Model to classify S&amp;P 500 market regimes from daily data, combines
-                RSI, ATR, and volatility signals into position sizing and trade logic, backtests the
-                strategy, and deploys to a Linux VPS via AWS Lambda and the Alpaca API for automated
-                paper trading.
-              </p>
-              <div class="f-links">
-                <a href="https://github.com/dinnyyy/first_trading_bot" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
-                  Source
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ===================== Certifications ===================== -->
-      <section class="ed-block" id="certifications">
-        <p class="ed-head">certifications.json</p>
-        <h2 class="ed-title">Certifications &amp; credentials</h2>
-        <p class="ed-lead">Verified qualifications and academic distinctions.</p>
-
-        <div class="cert-list">
-          <article class="cert-item reveal">
-            <div class="cert-thumb"><img src="assets/certs/nvidia-cuda-cert.png" alt="NVIDIA certificate of competency for Joshua Dinn" loading="lazy" /></div>
-            <div class="cert-body">
-              <p class="cert-issuer">NVIDIA</p>
-              <h3 class="cert-title">Fundamentals of Accelerated Computing with Modern CUDA C++</h3>
-              <p class="cert-meta">Certificate of Competency &middot; Issued April 2026</p>
-              <div class="cert-links">
-                <a href="https://learn.nvidia.com/certificates?id=7DMbTBibRmGC9NkTErVGbw" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
-                  Verify certificate
-                </a>
-                <a href="assets/certs/NVIDIA_CUDA_Fundamentals.pdf" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"/><path d="M14 2v6h6"/></svg>
-                  Download PDF
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="cert-item reveal">
-            <div class="cert-body">
-              <p class="cert-issuer">Monash University</p>
-              <h3 class="cert-title">Distinction: Software Engineering &amp; Econometrics</h3>
-              <p class="cert-meta">Weighted average mark: 79.97 (Distinction) &middot; 2023 &ndash; present</p>
-              <div class="cert-links">
-                <a href="assets/resume/Joshua_Dinn_Software_Engineering.pdf" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-                  View resume
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="cert-item reveal">
-            <div class="cert-body">
-              <p class="cert-issuer">Monash University &middot; Unit FIT2107</p>
-              <h3 class="cert-title">Software Quality &amp; Testing</h3>
-              <p class="cert-meta">Scored 100% overall in the unit, which included the major project, the Maze Solver</p>
-              <div class="cert-links">
-                <a href="#maze-solver">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                  See the project
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ===================== Contact ===================== -->
-      <section class="ed-block" id="contact">
-        <p class="ed-head">contact.sh</p>
-        <div class="contact-block">
-          <h2 class="ed-title">Let's build something</h2>
-          <p class="hero-lead">I'm open to 2026/2027 internships, and interesting problems in data science, statistics, and software. The fastest way to reach me is email.</p>
-          <div class="ct-links">
-            <a class="btn btn-primary" href="mailto:joshdinn01@gmail.com">
+    <!-- ===================== Contact ===================== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-panel">
+          <h2 class="contact-title" id="contact-title">Let&rsquo;s build something</h2>
+          <p class="contact-lead">I&rsquo;m open to 2026/2027 internships, and interesting problems in data science, statistics, and software. The fastest way to reach me is email.</p>
+          <div class="contact-actions">
+            <a class="btn btn-default btn-lg" href="mailto:joshdinn01@gmail.com">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
               joshdinn01@gmail.com
             </a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/josh-dinn/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn-ghost" href="https://github.com/dinnyyy" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-outline btn-lg" href="https://www.linkedin.com/in/josh-dinn/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-outline btn-lg" href="https://github.com/dinnyyy" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
-      </section>
-    </main>
-  </div>
-
-  <!-- ===================== Status bar ===================== -->
-  <footer class="statusbar">
-    <div class="statusbar-inner">
-      <span class="sb-item"><span class="sb-dot"></span> open to work</span>
-      <span class="sb-item">&#9095; main</span>
-      <span class="sb-spacer"></span>
-      <span class="sb-item"># &copy; <span id="year">2026</span> Joshua Dinn</span>
-      <div class="social">
-        <a href="mailto:joshdinn01@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        </a>
       </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Joshua Dinn</p>
+      <a class="text-link" href="mailto:joshdinn01@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Email
+      </a>
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260820"></script>
+  <script src="js/main.js?v=20261001"></script>
 </body>
 </html>

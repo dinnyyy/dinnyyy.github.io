@@ -1,62 +1,64 @@
 /* =============================================================
-   Interactions: theme toggle, sidebar explorer, scrollspy, reveal
+   Interactions: theme toggle, mobile menu, header border, scrollspy
    ============================================================= */
 (function () {
   "use strict";
 
   var root = document.documentElement;
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
 
-  /* ---- Theme toggle (init happens inline in <head> to avoid FOUC) ---- */
-  function currentTheme() {
-    return root.getAttribute("data-theme") === "light" ? "light" : "dark";
-  }
-  function setTheme(theme) {
-    root.setAttribute("data-theme", theme);
-    try { localStorage.setItem("theme", theme); } catch (e) {}
-    var btn = document.querySelector(".theme-toggle");
-    if (btn) btn.setAttribute("aria-label", "Switch to " + (theme === "light" ? "dark" : "light") + " theme");
-  }
+  /* ---- Theme toggle (initial theme is set inline in <head> to avoid a flash) ---- */
   var themeBtn = document.querySelector(".theme-toggle");
+  function syncThemeUi() {
+    var dark = root.classList.contains("dark");
+    if (themeBtn) themeBtn.setAttribute("aria-label", "Switch to " + (dark ? "light" : "dark") + " theme");
+    if (themeMeta) themeMeta.setAttribute("content", dark ? "#131824" : "#f8fafd");
+  }
   if (themeBtn) {
     themeBtn.addEventListener("click", function () {
-      setTheme(currentTheme() === "light" ? "dark" : "light");
+      var dark = !root.classList.contains("dark");
+      root.classList.toggle("dark", dark);
+      try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) {}
+      syncThemeUi();
     });
   }
+  syncThemeUi();
 
-  /* ---- Tab bar shadow on scroll ---- */
-  var tabbar = document.querySelector(".tabbar");
+  /* ---- Header border once the page scrolls ---- */
+  var header = document.querySelector(".site-header");
   function onScroll() {
-    if (tabbar) tabbar.classList.toggle("scrolled", window.scrollY > 8);
+    if (header) header.classList.toggle("scrolled", window.scrollY > 8);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---- Mobile file-explorer sidebar ---- */
-  var explorerToggle = document.querySelector(".explorer-toggle");
-  var sidebar = document.getElementById("file-tree");
-  var scrim = document.querySelector(".sidebar-scrim");
-  function closeSidebar() {
-    if (!sidebar) return;
-    sidebar.classList.remove("open");
-    if (scrim) scrim.classList.remove("show");
-    if (explorerToggle) explorerToggle.setAttribute("aria-expanded", "false");
+  /* ---- Mobile menu ---- */
+  var menuBtn = document.querySelector(".menu-toggle");
+  var nav = document.getElementById("site-nav");
+  function setMenu(open) {
+    if (!nav || !menuBtn) return;
+    nav.classList.toggle("open", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
   }
-  if (explorerToggle && sidebar) {
-    explorerToggle.addEventListener("click", function () {
-      var open = sidebar.classList.toggle("open");
-      if (scrim) scrim.classList.toggle("show", open);
-      explorerToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", function () {
+      setMenu(!nav.classList.contains("open"));
     });
-    sidebar.addEventListener("click", function (e) {
-      if (e.target.closest("a")) closeSidebar();
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) setMenu(false);
     });
-    if (scrim) scrim.addEventListener("click", closeSidebar);
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeSidebar();
+      if (e.key === "Escape" && nav.classList.contains("open")) {
+        setMenu(false);
+        menuBtn.focus();
+      }
+    });
+    document.addEventListener("click", function (e) {
+      if (nav.classList.contains("open") && !nav.contains(e.target) && !menuBtn.contains(e.target)) setMenu(false);
     });
   }
 
-  /* ---- Scrollspy: highlight active tab + sidebar file ---- */
+  /* ---- Scrollspy: mark the nav link for the section in view ---- */
   var links = Array.prototype.slice.call(document.querySelectorAll(".spy-link[href^='#']"));
   var sections = links
     .map(function (a) { return document.querySelector(a.getAttribute("href")); })
@@ -69,32 +71,14 @@
           if (!entry.isIntersecting) return;
           var id = entry.target.id;
           links.forEach(function (a) {
-            a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+            if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "true");
+            else a.removeAttribute("aria-current");
           });
         });
       },
       { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
     );
     sections.forEach(function (s) { spy.observe(s); });
-  }
-
-  /* ---- Reveal on scroll ---- */
-  var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-  if ("IntersectionObserver" in window && reveals.length) {
-    var io = new IntersectionObserver(
-      function (entries, obs) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
-    );
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
   /* ---- Footer year ---- */
